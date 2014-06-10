@@ -1,0 +1,300 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-04-23 13:34+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:33
+#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:43
+msgid ""
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/profiles/default/types/Claim.xml
+msgid "A claim to the Ombudsman."
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/config.py:22
+msgid "Acima de 71"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:120
+msgid "Add"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:14
+msgid "Add new claim"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:109
+msgid "Add response"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:77
+msgid "Address"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:70
+msgid "Age"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:22
+#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:23
+msgid "Area"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:63
+msgid "Areas"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:18
+msgid "Check claim"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:89
+msgid "City"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:30
+#: interlegis/portalmodelo/ombudsman/profiles/default/types/Claim.xml
+msgid "Claim"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:21
+msgid "Claim ${id}"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:14
+msgid "Claim Type"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:55
+msgid "Claim Types"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/browser/ombudsoffice.py:92
+msgid "Claim id not found."
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:20
+msgid "Claim number"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/profiles/default/types/OmbudsOffice.xml
+msgid "Container to store claims to the Ombudsman."
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:33
+msgid "Created"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:93
+msgid "Date"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:48
+msgid "Description"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:39
+msgid "Details"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:54
+#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:33
+msgid "Email"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:64
+msgid "Enter areas, name and email of responsible persons."
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:56
+msgid "Enter claim types."
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/config.py:16
+msgid "Entre 16 e 20"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/config.py:17
+msgid "Entre 21 e 30"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/config.py:18
+msgid "Entre 31 e 40"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/config.py:19
+msgid "Entre 41 e 50"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/config.py:20
+msgid "Entre 51 e 60"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/config.py:21
+msgid "Entre 61 e 70"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/config.py:10
+msgid "Feminino"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:63
+msgid "Genre"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/browser/response.py:35
+msgid "Item created."
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:33
+msgid "Last Modification"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:70
+msgid "Managers"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/config.py:11
+msgid "Masculino"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/config.py:15
+msgid "Menos que 15"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:48
+msgid "Name"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/browser/ombudsoffice.py:83
+msgid "No claim id specified."
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:104
+msgid "No responses yet for this claim."
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:42
+#: interlegis/portalmodelo/ombudsman/profiles/default/types/OmbudsOffice.xml
+msgid "Ombuds Office"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:26
+msgid "Open claims"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:53
+msgid "Personal information"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:83
+msgid "Postal code"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:118
+msgid "Response text"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:83
+msgid "Responses"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:89
+#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:28
+msgid "Responsible"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:31
+msgid "Review State"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:22
+msgid "Search"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:32
+msgid "Sent Date"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:97
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:95
+msgid "State"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/browser/response.py:23
+msgid "There were some errors. Required input is missing."
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:12
+msgid "Tipos de solicitação"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:32
+msgid "Topic"
+msgstr ""
+
+#. Default: "Informe seu endereço."
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:78
+msgid "help_address"
+msgstr ""
+
+#. Default: "Selecione sua idade."
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:71
+msgid "help_age"
+msgstr ""
+
+#. Default: "Selecione a área para a qual a solicitação será enviada."
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:23
+msgid "help_area"
+msgstr ""
+
+#. Default: "Informe sua cidade."
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:90
+msgid "help_city"
+msgstr ""
+
+#. Default: "Por favor, informe detalhes adicionais."
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:40
+msgid "help_description"
+msgstr ""
+
+#. Default: "Informe o email para onde serão enviadas informações sobre a solicitação."
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:55
+msgid "help_email"
+msgstr ""
+
+#. Default: "Selecione seu sexo."
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:64
+msgid "help_genre"
+msgstr ""
+
+#. Default: "Selecione o tipo de solicitação."
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:13
+msgid "help_kind"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:49
+msgid "help_name"
+msgstr ""
+
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:84
+msgid "help_postal_code"
+msgstr ""
+
+#. Default: "Informe seu estado."
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:96
+msgid "help_state"
+msgstr ""
+

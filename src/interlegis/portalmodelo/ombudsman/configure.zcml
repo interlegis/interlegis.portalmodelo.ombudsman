@@ -1,0 +1,86 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:grok="http://namespaces.zope.org/grok"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="interlegis.portalmodelo.ombudsman">
+
+  <five:registerPackage package="." />
+  <include package="plone.app.dexterity" />
+  <include package="plone.app.referenceablebehavior" />
+  <include package="plone.behavior" file="meta.zcml" />
+  <include package="collective.z3cform.datagridfield" />
+  <include package="Products.BrFieldsAndWidgets" />
+
+  <include package=".behaviors" />
+  <include package=".browser" />
+
+  <i18n:registerTranslations directory="locales" />
+
+  <permission
+      id="interlegis.portalmodelo.ombudsman.AddOmbudsOffice"
+      title="interlegis.portalmodelo.ombudsman: Add Ombuds Office"
+      />
+
+  <permission
+      id="interlegis.portalmodelo.ombudsman.AddClaim"
+      title="interlegis.portalmodelo.ombudsman: Add Claim"
+      />
+
+  <permission
+      id="interlegis.portalmodelo.ombudsman.AddResponse"
+      title="interlegis.portalmodelo.ombudsman: Add Response"
+      />
+
+  <grok:grok package="." />
+
+  <browser:resourceDirectory name="interlegis.portalmodelo.ombudsman" directory="static" />
+
+  <adapter
+      for=".interfaces.IClaim"
+      factory="collective.watcherlist.watchers.WatcherList"
+      />
+
+  <adapter
+      provides="interlegis.portalmodelo.ombudsman.adapters.IResponseContainer"
+      factory="interlegis.portalmodelo.ombudsman.adapters.ResponseContainer"
+      />
+
+  <plone:behavior
+      title="Name from date"
+      description="Automatically generate short URL name for content based on its creation date"
+      provides=".behaviors.INameFromDate"
+      for=".interfaces.IClaim"
+      />
+
+  <adapter factory=".behaviors.NameFromDate" />
+
+  <utility
+      provides="zope.schema.interfaces.IVocabularyFactory"
+      component=".vocabulary.GenresVocabulary"
+      name="interlegis.portalmodelo.ombudsman.Genres"
+      />
+
+  <utility
+      provides="zope.schema.interfaces.IVocabularyFactory"
+      component=".vocabulary.AgesVocabulary"
+      name="interlegis.portalmodelo.ombudsman.Ages"
+      />
+
+  <utility
+      provides="zope.schema.interfaces.IVocabularyFactory"
+      component=".vocabulary.ClaimTypesVocabulary"
+      name="interlegis.portalmodelo.ombudsman.ClaimTypes"
+      />
+
+  <utility
+      provides="zope.schema.interfaces.IVocabularyFactory"
+      component=".vocabulary.AreasVocabulary"
+      name="interlegis.portalmodelo.ombudsman.Areas"
+      />
+
+  <include file="profiles.zcml" />
+
+</configure>

@@ -1,0 +1,32 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:gs="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    i18n_domain="interlegis.portalmodelo.ombudsman">
+
+    <!-- Profile -->
+    <gs:registerProfile
+        name="default"
+        title="interlegis.portalmodelo.ombudsman: Versao 1010"
+        directory="profile"
+        description="Atualiza o pacote interlegis.portalmodelo.ombudsman para versao 1010"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        i18n:attributes="title; description"
+        />
+
+    <!-- Upgrade -->
+    <gs:upgradeSteps
+        source="1000"
+        destination="1010"
+        profile="interlegis.portalmodelo.ombudsman:default">
+
+        <gs:upgradeStep
+            title="Atualiza portal para versao 1010"
+            description="Aplica profile v1010."
+            handler=".handler.apply_profile"
+            />
+
+    </gs:upgradeSteps>
+
+</configure>

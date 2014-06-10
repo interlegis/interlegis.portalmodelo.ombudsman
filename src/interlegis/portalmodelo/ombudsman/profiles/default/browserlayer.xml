@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<layers>
+  <layer
+      name="interlegis.portalmodelo.ombudsman"
+      interface="interlegis.portalmodelo.ombudsman.interfaces.IBrowserLayer"
+      />
+</layers>

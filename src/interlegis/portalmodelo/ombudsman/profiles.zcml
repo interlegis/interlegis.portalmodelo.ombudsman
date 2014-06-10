@@ -1,0 +1,30 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    i18n_domain="interlegis.portalmodelo.ombudsman">
+
+  <genericsetup:registerProfile
+      name="default"
+      title="Portal Modelo: Sistema de Ouvidoria"
+      directory="profiles/default"
+      description="Instala o pacote interlegis.portalmodelo.ombudsman dentro de um portal Plone"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      i18n:attributes="title; description"
+      />
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="interlegis.portalmodelo.ombudsman: Remoção do Pacote"
+      directory="profiles/uninstall"
+      description="Remove o pacote interlegis.portalmodelo.ombudsman de dentro de um portal Plone"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      i18n:attributes="title; description"
+      />
+
+  <!-- include package=".upgrades" / -->
+
+  <utility factory=".setuphandlers.HiddenProfiles" name="interlegis.portalmodelo.ombudsman" />
+
+</configure>

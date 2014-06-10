@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<rolemap>
+  <permissions>
+    <permission name="interlegis.portalmodelo.ombudsman: Add Claim" acquire="True">
+      <role name="Anonymous"/>
+    </permission>
+    <permission name="interlegis.portalmodelo.ombudsman: Add Ombuds Office" acquire="True">
+      <role name="Manager"/>
+      <role name="Site Administrator"/>
+      <role name="Owner"/>
+      <role name="Contributor"/>
+    </permission>
+    <permission name="interlegis.portalmodelo.ombudsman: Add Response" acquire="True">
+      <role name="Manager"/>
+      <role name="Site Administrator"/>
+      <role name="Owner"/>
+      <role name="Contributor"/>
+    </permission>
+  </permissions>
+</rolemap>

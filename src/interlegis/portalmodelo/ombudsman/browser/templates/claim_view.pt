@@ -1,0 +1,129 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="interlegis.portalmodelo.ombudsman">
+<head>
+  <metal:css fill-slot="style_slot">
+    <link type="text/css" rel="stylesheet" href="++resource++interlegis.portalmodelo.ombudsman/ombudsman.css" />
+  </metal:css>
+</head>
+<body>
+<metal:main fill-slot="main">
+  <tal:main metal:define-macro="main"
+      define="toLocalizedTime nocall:context/@@plone/toLocalizedTime">
+
+    <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+    <h1 class="documentFirstHeading" i18n:translate="">
+      Claim <span tal:replace="context/id" i18n:name="id" />
+    </h1>
+
+    <div tal:replace="structure provider:plone.belowcontenttitle" />
+
+    <fieldset class="claimTitle">
+      <h2 tal:content="context/title" />
+      <p class="" tal:content="context/description" />
+    </fieldset>
+
+    <fieldset class="claimInformation">
+      <div>
+        <label class="horizontal" i18n:translate="">Created</label>
+        <span tal:content="python:toLocalizedTime(context.created(), long_format=1)" />
+      </div>
+      <div>
+        <label class="horizontal" tal:content="structure view/w/kind/label" />
+        <span tal:content="structure view/w/kind/render" />
+      </div>
+      <div>
+        <label class="horizontal" tal:content="structure view/w/area/label" />
+        <span tal:content="structure view/w/area/render" />
+      </div>
+    </fieldset>
+
+    <div class="visualClear"><!----></div>
+
+    <div tal:replace="structure provider:plone.abovecontentbody" />
+
+    <div id="content-core">
+
+      <fieldset class="personalInformation">
+        <legend i18n:translate="">Personal information</legend>
+        <div>
+          <label class="horizontal" tal:content="structure view/w/name/label" />
+          <span tal:content="structure view/w/name/render" />
+        </div>
+        <div tal:condition="not:view/is_anonymous">
+          <label class="horizontal" tal:content="structure view/w/email/label" />
+          <span tal:content="structure view/w/email/render" />
+        </div>
+        <div tal:condition="not:view/is_anonymous">
+          <label class="horizontal" tal:content="structure view/w/genre/label" />
+          <span tal:content="structure view/w/genre/render" />
+        </div>
+        <div tal:condition="not:view/is_anonymous">
+          <label class="horizontal" tal:content="structure view/w/age/label" />
+          <span tal:content="structure view/w/age/render" />
+        </div>
+        <div>
+          <label class="horizontal" tal:content="structure view/w/city/label" /> -
+          <label class="horizontal" tal:content="structure view/w/state/label" />
+          <span tal:content="structure view/w/city/render" /> -
+          <span tal:content="structure view/w/state/render" />
+        </div>
+        <div tal:condition="not:view/is_anonymous">
+          <label class="horizontal" tal:content="structure view/w/postal_code/label" />
+          <span tal:content="structure view/w/postal_code/render" />
+        </div>
+      </fieldset>
+    </div>
+
+    <h2 i18n:translate="">Responses</h2>
+    <div tal:condition="view/has_responses" tal:repeat="response view/responses">
+      <div>
+        <h3 tal:content="response/id"/>
+      </div>
+      <div>
+        <label class="horizontal" i18n:translate="">Responsible</label>
+        <span tal:content="response/creator" />
+      </div>
+      <div>
+        <label class="horizontal" i18n:translate="">Date</label>
+        <span tal:content="python:toLocalizedTime(response['date'], long_format=1)" />
+      </div>
+      <div>
+        <label class="horizontal" i18n:translate="">State</label>
+        <span tal:content="response/review_state" />
+      </div>
+      <div>
+        <p tal:content="response/text" />
+      </div>
+    </div>
+    <p tal:condition="not:view/has_responses" i18n:translate="">
+        No responses yet for this claim.
+    </p>
+
+    <div tal:condition="view/can_add_response">
+      <h2 i18n:translate="">Add response</h2>
+      <form action="@@add-response"
+          tal:attributes="action string:${context/absolute_url}/@@add-response">
+        <label class="horizontal" i18n:translate="">State</label>
+        <select name="transition">
+          <option value="" tal:repeat="transition view/transitions"
+              tal:content="transition/title"
+              tal:attributes="value transition/id" />
+        </select>
+        <textarea placeholder="Response text" title="Response text" rows="20" name="text"
+            i18n:attributes="placeholder; title"></textarea>
+        <input type="submit" i18n:attributes="value" value="Add" />
+      </form>
+    </div>
+
+    <div tal:replace="structure provider:plone.belowcontentbody" />
+
+  </tal:main>
+</metal:main>
+</body>
+</html>

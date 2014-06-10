@@ -1,0 +1,12 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser">
+
+  <browser:page
+      name="claim-mail"
+      for="interlegis.portalmodelo.ombudsman.interfaces.IClaim"
+      permission="zope2.View"
+      class=".notifications.ClaimMail"
+      />
+
+</configure>

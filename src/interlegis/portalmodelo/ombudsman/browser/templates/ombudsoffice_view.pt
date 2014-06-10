@@ -1,0 +1,56 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="interlegis.portalmodelo.ombudsman">
+<body>
+<metal:core fill-slot="content-core">
+  <tal:core metal:define-macro="content-core">
+
+    <div tal:condition="view/is_anonymous">
+      <form action="++add++Claim">
+        <input type="submit" i18n:attributes="value" value="Add new claim" />
+      </form>
+    </div>
+
+    <h2 i18n:translate="">Check claim</h2>
+    <form action="@@search-claim">
+      <input class="searchField" type="text" placeholder="Claim number" title="Claim number" name="claim"
+          i18n:attributes="placeholder; title" />
+      <input type="submit" i18n:attributes="value" value="Search" />
+    </form>
+
+    <div tal:condition="not:view/is_anonymous">
+      <h2 i18n:translate="">Open claims</h2>
+      <table class="listing">
+          <thead>
+            <tr>
+              <th class="column" i18n:translate="">Claim</th>
+              <th class="column" i18n:translate="">Review State</th>
+              <th class="column" i18n:translate="">Sent Date</th>
+              <th class="column" i18n:translate="">Last Modification</th>
+            </tr>
+          </thead>
+          <tbody tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime">
+            <tr tal:repeat="claim view/claims">
+              <td class="">
+                <a class="" href="" title="" tal:content="claim/title"
+                    tal:attributes="href claim/url; title claim/description" />
+              </td>
+              <td class=""
+                  tal:content="claim/review_state"
+                  tal:attributes="class claim/klass"
+                  i18n:translate="" />
+              <td class="" tal:content="python:toLocalizedTime(claim['created'])" />
+              <td class="" tal:content="python:toLocalizedTime(claim['modified'], long_format=1)" />
+            </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </tal:core>
+</metal:core>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<?xml version="1.0"?>
+<dc-workflow
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    i18n:domain="plone"
+    workflow_id="claim_workflow"
+    title="Claim Workflow"
+    description="Simple workflow to deal with public claims."
+    initial_state="pending"
+    manager_bypass="False"
+    state_variable="review_state"
+    i18n:attributes="title; description">
+  <permission>Access contents information</permission>
+  <permission>Change portal events</permission>
+  <permission>Modify portal content</permission>
+  <permission>View</permission>
+  <state state_id="moving" title="Moving" i18n:attributes="title">
+    <description>Being processed, visible to everyone.</description>
+    <exit-transition transition_id="move"/>
+    <exit-transition transition_id="resolve"/>
+    <permission-map acquired="False" name="Access contents information">
+      <permission-role>Anonymous</permission-role>
+    </permission-map>
+    <permission-map acquired="False" name="Change portal events">
+      <permission-role>Manager</permission-role>
+      <permission-role>Reviewer</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map acquired="False" name="Modify portal content">
+      <permission-role>Manager</permission-role>
+      <permission-role>Reviewer</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map acquired="False" name="View">
+      <permission-role>Anonymous</permission-role>
+    </permission-map>
+  </state>
+  <state state_id="accepted" title="Accepted" i18n:attributes="title">
+    <description>Accepted, visible to everyone.</description>
+    <exit-transition transition_id="move"/>
+    <exit-transition transition_id="resolve"/>
+    <permission-map acquired="False" name="Access contents information">
+      <permission-role>Anonymous</permission-role>
+    </permission-map>
+    <permission-map acquired="False" name="Change portal events">
+      <permission-role>Manager</permission-role>
+      <permission-role>Reviewer</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map acquired="False" name="Modify portal content">
+      <permission-role>Manager</permission-role>
+      <permission-role>Reviewer</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map acquired="False" name="View">
+      <permission-role>Anonymous</permission-role>
+    </permission-map>
+  </state>
+  <state state_id="pending" title="Pending" i18n:attributes="title">
+    <description>Waiting to be reviewed, visible to everyone.</description>
+    <exit-transition transition_id="accept"/>
+    <exit-transition transition_id="move"/>
+    <exit-transition transition_id="reject"/>
+    <permission-map acquired="False" name="Access contents information">
+      <permission-role>Anonymous</permission-role>
+    </permission-map>
+    <permission-map acquired="False" name="Change portal events">
+      <permission-role>Manager</permission-role>
+      <permission-role>Reviewer</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map acquired="False" name="Modify portal content">
+      <permission-role>Manager</permission-role>
+      <permission-role>Reviewer</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map acquired="False" name="View">
+      <permission-role>Anonymous</permission-role>
+    </permission-map>
+  </state>
+  <state state_id="resolved" title="Resolved" i18n:attributes="title">
+    <description>Resolved, visible to everyone.</description>
+    <permission-map acquired="False" name="Access contents information">
+      <permission-role>Anonymous</permission-role>
+    </permission-map>
+    <permission-map acquired="False" name="Change portal events">
+      <permission-role>Manager</permission-role>
+      <permission-role>Reviewer</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map acquired="False" name="Modify portal content">
+      <permission-role>Manager</permission-role>
+      <permission-role>Reviewer</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map acquired="False" name="View">
+      <permission-role>Anonymous</permission-role>
+    </permission-map>
+  </state>
+  <state state_id="rejected" title="Rejected" i18n:attributes="title">
+    <description>Rejected, visible to everyone and no longer editable.</description>
+    <permission-map acquired="False" name="Access contents information">
+      <permission-role>Anonymous</permission-role>
+    </permission-map>
+    <permission-map acquired="False" name="Change portal events"/>
+    <permission-map acquired="False" name="Modify portal content"/>
+    <permission-map acquired="False" name="View">
+      <permission-role>Anonymous</permission-role>
+    </permission-map>
+  </state>
+  <transition
+      transition_id="move"
+      title="Editor moves a claim"
+      new_state="moving"
+      trigger="USER"
+      before_script=""
+      after_script=""
+      i18n:attributes="title">
+    <description i18n:translate="">Editor moves a claim</description>
+    <action category="workflow" icon="" url="%(content_url)s/content_status_modify?workflow_action=publish">Move</action>
+    <guard/>
+  </transition>
+  <transition
+      transition_id="reject"
+      title="Reviewer rejects claim"
+      new_state="rejected"
+      trigger="USER"
+      before_script=""
+      after_script=""
+      i18n:attributes="title">
+    <description i18n:translate="">Reviewer rejects claim</description>
+    <action
+        url="%(content_url)s/content_status_modify?workflow_action=reject"
+        category="workflow"
+        icon=""
+        i18n:translate="">Reject claim</action>
+    <guard>
+      <guard-permission>Review portal content</guard-permission>
+      <guard-permission>Modify portal content</guard-permission>
+    </guard>
+  </transition>
+  <transition
+      transition_id="resolve"
+      title="Editor resolves a claim"
+      new_state="resolved"
+      trigger="USER"
+      before_script=""
+      after_script=""
+      i18n:attributes="title">
+    <description i18n:translate="">Editor resolves a claim</description>
+    <action
+        url="%(content_url)s/content_status_modify?workflow_action=resolve"
+        category="workflow"
+        icon=""
+        i18n:translate="">Resolve</action>
+    <guard/>
+  </transition>
+  <transition
+      transition_id="accept"
+      title="Editor accepts a claim"
+      new_state="accepted"
+      trigger="USER"
+      before_script=""
+      after_script=""
+      i18n:attributes="title">
+    <description i18n:translate="">Editor accepts a claim</description>
+    <action
+        url="%(content_url)s/content_status_modify?workflow_action=submit"
+        category="workflow"
+        icon=""
+        i18n:translate="">Accept</action>
+    <guard>
+      <guard-permission>Review portal content</guard-permission>
+      <guard-permission>Modify portal content</guard-permission>
+    </guard>
+  </transition>
+  <worklist title="" worklist_id="reviewer_queue">
+    <description>Reviewer tasks</description>
+    <action
+        url="%(portal_url)s/search?review_state=pending"
+        category="global"
+        icon=""
+        i18n:translate="">Pending (%(count)d)</action>
+    <guard>
+      <guard-permission>Review portal content</guard-permission>
+    </guard>
+    <match name="review_state" values="pending"/>
+  </worklist>
+  <variable for_catalog="False" for_status="True" update_always="True" variable_id="action">
+    <description>Previous transition</description>
+    <default>
+      <expression>transition/getId|nothing</expression>
+    </default>
+    <guard/>
+  </variable>
+  <variable for_catalog="False" for_status="True" update_always="True" variable_id="actor">
+    <description>The ID of the user who performed the previous transition</description>
+    <default>
+      <expression>user/getId</expression>
+    </default>
+    <guard/>
+  </variable>
+  <variable for_catalog="False" for_status="True" update_always="True" variable_id="comments">
+    <description>Comment about the last transition</description>
+    <default>
+      <expression>python:state_change.kwargs.get('comment', '')</expression>
+    </default>
+    <guard/>
+  </variable>
+  <variable for_catalog="False" for_status="False" update_always="False" variable_id="review_history">
+    <description>Provides access to workflow history</description>
+    <default>
+      <expression>state_change/getHistory</expression>
+    </default>
+    <guard>
+      <guard-permission>Request review</guard-permission>
+      <guard-permission>Review portal content</guard-permission>
+    </guard>
+  </variable>
+  <variable for_catalog="False" for_status="True" update_always="True" variable_id="time">
+    <description>When the previous transition was performed</description>
+    <default>
+      <expression>state_change/getDateTime</expression>
+    </default>
+    <guard/>
+  </variable>
+</dc-workflow>
