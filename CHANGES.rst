@@ -4,7 +4,8 @@ Changelog
 1.0b2 (unreleased)
 ------------------
 
-- Os campos Gênero e Idade foram removidos do formulário (refs. https://colab.interlegis.leg.br/ticket/2946).
+- O preenchimento dos campos Endereço, CEP, Cidade e Estado e agora opcional.
+  Os campos Gênero e Idade foram removidos do formulário (refs. https://colab.interlegis.leg.br/ticket/2946).
   [hvelarde]
 
 

@@ -64,25 +64,25 @@ class IClaim(model.Schema):
     address = schema.TextLine(
         title=_(u'Address'),
         description=_(u'help_address', default=u'Informe seu endereço.'),
-        required=True,
+        required=False,
     )
 
     form.read_permission(postal_code='cmf.ModifyPortalContent')
     postal_code = schema.TextLine(
         title=_(u'Postal code'),
         description=_(u'help_postal_code', default=u''),
-        required=True,
+        required=False,
     )
 
     city = schema.TextLine(
         title=_(u'City'),
         description=_(u'help_city', default=u'Informe sua cidade.'),
-        required=True,
+        required=False,
     )
 
     state = schema.Choice(
         title=_(u'State'),
         description=_(u'help_state', default=u'Informe seu estado.'),
-        required=True,
+        required=False,
         vocabulary=u'brasil.estados',
     )
