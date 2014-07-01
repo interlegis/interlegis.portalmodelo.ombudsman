@@ -17,6 +17,7 @@ class NameFromDateTestCase(unittest.TestCase):
     def setUp(self):
         self.portal = self.layer['portal']
         self.browser = Browser(self.layer['app'])
+        self.browser.handleErrors = False
 
         self.office = create_ombudsoffice(self, 'office')
         self.office.claim_types = [{'claim_type': '1'}]
