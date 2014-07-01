@@ -4,6 +4,9 @@ Changelog
 1.0b2 (unreleased)
 ------------------
 
+- Adiciona o `Linkify`_, um plugin do jQuery para criar links automaticamente se for dada uma resposta com uma URL (refs. https://colab.interlegis.leg.br/ticket/2946).
+  [hvelarde]
+
 - O preenchimento dos campos Endereço, CEP, Cidade e Estado e agora opcional.
   Os campos Gênero e Idade foram removidos do formulário (refs. https://colab.interlegis.leg.br/ticket/2946).
   [hvelarde]
@@ -20,3 +23,5 @@ Changelog
 ------------------
 
 - Initial release.
+
+.. _`Linkify`: https://github.com/SoapBox/jQuery-linkify

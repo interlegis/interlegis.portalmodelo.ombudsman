@@ -9,6 +9,11 @@
   <metal:css fill-slot="style_slot">
     <link type="text/css" rel="stylesheet" href="++resource++interlegis.portalmodelo.ombudsman/ombudsman.css" />
   </metal:css>
+  <metal:js fill-slot="javascript_head_slot">
+    <script type="text/javascript"
+        tal:attributes="src string:${portal_url}/++resource++interlegis.portalmodelo.ombudsman/jquery.linkify.min.js">
+    </script>
+  </metal:js>
 </head>
 <body>
 <metal:main fill-slot="main">
@@ -90,7 +95,7 @@
         <span tal:content="response/review_state" />
       </div>
       <div>
-        <p tal:content="response/text" />
+        <p data-linkify="this" tal:content="response/text" />
       </div>
     </div>
     <p tal:condition="not:view/has_responses" i18n:translate="">
