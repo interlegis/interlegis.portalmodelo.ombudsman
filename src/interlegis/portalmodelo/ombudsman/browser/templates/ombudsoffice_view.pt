@@ -22,7 +22,7 @@
       <input type="submit" i18n:attributes="value" value="Search" />
     </form>
 
-    <div tal:condition="not:view/is_anonymous">
+    <div>
       <h2 i18n:translate="">Open claims</h2>
       <table class="listing">
           <thead>

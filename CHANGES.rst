@@ -4,6 +4,11 @@ Changelog
 1.0b2 (unreleased)
 ------------------
 
+- Exibe a tabela Solicitações abertas também para usuários anônimos, para que
+  todos saibam quais os pedidos já foram feitos e quais as suas respostas
+  (refs. https://colab.interlegis.leg.br/ticket/2946).
+  [hvelarde]
+
 - Adiciona o `Linkify`_, um plugin do jQuery para criar links automaticamente se for dada uma resposta com uma URL (refs. https://colab.interlegis.leg.br/ticket/2946).
   [hvelarde]
 
