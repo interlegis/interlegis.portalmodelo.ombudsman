@@ -60,22 +60,6 @@ class IClaim(model.Schema):
         required=True,
     )
 
-    form.read_permission(genre='cmf.ModifyPortalContent')
-    genre = schema.Choice(
-        title=_(u'Genre'),
-        description=_(u'help_genre', default=u'Selecione seu sexo.'),
-        required=True,
-        vocabulary=u'interlegis.portalmodelo.ombudsman.Genres'
-    )
-
-    form.read_permission(age='cmf.ModifyPortalContent')
-    age = schema.Choice(
-        title=_(u'Age'),
-        description=_(u'help_age', default=u'Selecione sua idade.'),
-        required=True,
-        vocabulary=u'interlegis.portalmodelo.ombudsman.Ages'
-    )
-
     form.read_permission(address='cmf.ModifyPortalContent')
     address = schema.TextLine(
         title=_(u'Address'),

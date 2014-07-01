@@ -15,20 +15,6 @@ class VocabulariesTestCase(unittest.TestCase):
     def setUp(self):
         self.portal = self.layer['portal']
 
-    def test_genres_vocabulary(self):
-        name = 'interlegis.portalmodelo.ombudsman.Genres'
-        util = queryUtility(IVocabularyFactory, name)
-        self.assertIsNotNone(util)
-        genres = util(self.portal)
-        self.assertEqual(len(genres), 2)
-
-    def test_ages_vocabulary(self):
-        name = 'interlegis.portalmodelo.ombudsman.Ages'
-        util = queryUtility(IVocabularyFactory, name)
-        self.assertIsNotNone(util)
-        genres = util(self.portal)
-        self.assertEqual(len(genres), 8)
-
     def test_claim_types_vocabulary(self):
         office1 = create_ombudsoffice(self, 'office1')
         office2 = create_ombudsoffice(self, 'office2')

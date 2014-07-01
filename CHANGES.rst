@@ -4,7 +4,8 @@ Changelog
 1.0b2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Os campos Gênero e Idade foram removidos do formulário (refs. https://colab.interlegis.leg.br/ticket/2946).
+  [hvelarde]
 
 
 1.0b1 (2014-05-16)

@@ -1,27 +1,13 @@
 # -*- coding: utf-8 -*-
 from Acquisition import aq_inner
 from Acquisition import aq_parent
-from interlegis.portalmodelo.ombudsman.config import AGES
 from interlegis.portalmodelo.ombudsman.config import EMPTY
-from interlegis.portalmodelo.ombudsman.config import GENRES
 from interlegis.portalmodelo.ombudsman.interfaces import IClaim
 from interlegis.portalmodelo.ombudsman.interfaces import IOmbudsOffice
 from plone.i18n.normalizer.interfaces import IIDNormalizer
 from zope.component import queryUtility
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
-
-
-def GenresVocabulary(context):
-    """Create a vocabulary of genres.
-    """
-    return GENRES
-
-
-def AgesVocabulary(context):
-    """Create a vocabulary of ages.
-    """
-    return AGES
 
 
 def ClaimTypesVocabulary(context):

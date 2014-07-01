@@ -59,18 +59,6 @@
 
   <utility
       provides="zope.schema.interfaces.IVocabularyFactory"
-      component=".vocabulary.GenresVocabulary"
-      name="interlegis.portalmodelo.ombudsman.Genres"
-      />
-
-  <utility
-      provides="zope.schema.interfaces.IVocabularyFactory"
-      component=".vocabulary.AgesVocabulary"
-      name="interlegis.portalmodelo.ombudsman.Ages"
-      />
-
-  <utility
-      provides="zope.schema.interfaces.IVocabularyFactory"
       component=".vocabulary.ClaimTypesVocabulary"
       name="interlegis.portalmodelo.ombudsman.ClaimTypes"
       />

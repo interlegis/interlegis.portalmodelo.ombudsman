@@ -59,14 +59,6 @@
           <label class="horizontal" tal:content="structure view/w/email/label" />
           <span tal:content="structure view/w/email/render" />
         </div>
-        <div tal:condition="not:view/is_anonymous">
-          <label class="horizontal" tal:content="structure view/w/genre/label" />
-          <span tal:content="structure view/w/genre/render" />
-        </div>
-        <div tal:condition="not:view/is_anonymous">
-          <label class="horizontal" tal:content="structure view/w/age/label" />
-          <span tal:content="structure view/w/age/render" />
-        </div>
         <div>
           <label class="horizontal" tal:content="structure view/w/city/label" /> -
           <label class="horizontal" tal:content="structure view/w/state/label" />

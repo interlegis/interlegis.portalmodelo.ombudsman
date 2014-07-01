@@ -30,8 +30,6 @@ class NameFromDateTestCase(unittest.TestCase):
         browser.getControl('Topic').value = 'A Claim'
         browser.getControl('Name').value = 'Machado de Assis'
         browser.getControl('Email').value = 'machado@assis.org'
-        browser.getControl('Genre').value = ['m', ]
-        browser.getControl('Age').value = ['20', ]
         browser.getControl('Address').value = 'ABL 12'
         browser.getControl('Postal code').value = '80982-912'
         browser.getControl('City').value = 'Cosme Velho'
