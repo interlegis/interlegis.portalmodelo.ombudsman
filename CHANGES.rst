@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0b2 (unreleased)
+1.0b2 (2014-07-02)
 ------------------
 
 - As informações pessoais não devem ser exibida para usuários anônimos,
