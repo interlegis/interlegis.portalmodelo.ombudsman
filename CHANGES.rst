@@ -4,6 +4,11 @@ Changelog
 1.0b2 (unreleased)
 ------------------
 
+- As informações pessoais não devem ser exibida para usuários anônimos,
+  somente para os usuários administradores da ouvidoria
+  (refs. https://colab.interlegis.leg.br/ticket/2946).
+  [hvelarde]
+
 - Exibe a tabela Solicitações abertas também para usuários anônimos, para que
   todos saibam quais os pedidos já foram feitos e quais as suas respostas
   (refs. https://colab.interlegis.leg.br/ticket/2946).

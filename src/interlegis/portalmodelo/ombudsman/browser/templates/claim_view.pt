@@ -55,13 +55,13 @@
 
     <div id="content-core">
 
-      <fieldset class="personalInformation">
+      <fieldset class="personalInformation" tal:condition="not:view/is_anonymous">
         <legend i18n:translate="">Personal information</legend>
         <div>
           <label class="horizontal" tal:content="structure view/w/name/label" />
           <span tal:content="structure view/w/name/render" />
         </div>
-        <div tal:condition="not:view/is_anonymous">
+        <div>
           <label class="horizontal" tal:content="structure view/w/email/label" />
           <span tal:content="structure view/w/email/render" />
         </div>
@@ -71,7 +71,7 @@
           <span tal:content="structure view/w/city/render" /> -
           <span tal:content="structure view/w/state/render" />
         </div>
-        <div tal:condition="not:view/is_anonymous">
+        <div>
           <label class="horizontal" tal:content="structure view/w/postal_code/label" />
           <span tal:content="structure view/w/postal_code/render" />
         </div>
