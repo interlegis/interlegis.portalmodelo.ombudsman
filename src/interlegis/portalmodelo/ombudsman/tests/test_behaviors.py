@@ -2,9 +2,11 @@
 from datetime import datetime
 from interlegis.portalmodelo.ombudsman.testing import create_ombudsoffice
 from interlegis.portalmodelo.ombudsman.testing import FUNCTIONAL_TESTING
-from plone.testing.z2 import Browser
+from plone.app.testing import setRoles
+from plone.app.testing import TEST_USER_ID
 from plone.app.testing import TEST_USER_NAME
 from plone.app.testing import TEST_USER_PASSWORD
+from plone.testing.z2 import Browser
 
 import transaction
 import unittest
@@ -17,8 +19,8 @@ class NameFromDateTestCase(unittest.TestCase):
     def setUp(self):
         self.portal = self.layer['portal']
         self.browser = Browser(self.layer['app'])
+        setRoles(self.portal, TEST_USER_ID, ['Manager'])
         self.browser.handleErrors = False
-
         self.office = create_ombudsoffice(self, 'office')
         self.office.claim_types = [{'claim_type': '1'}]
 
