@@ -51,6 +51,7 @@ class View(dexterity.DisplayForm):
     def _responses(self):
         """Return a list of responses for the current Claim.
         """
+        transforms = api.portal.get_tool('portal_transforms')
         responses = []
         container = IResponseContainer(self.context)
         for id, response in enumerate(container):
@@ -61,7 +62,12 @@ class View(dexterity.DisplayForm):
                 creator=response.creator,
                 date=response.date,
                 review_state=response.review_state,
-                text=response.text,
+                text=transforms.convertTo(
+                    'text/html',
+                    response.text,
+                    context=self.context,
+                    mimetype='text/x-web-intelligent'
+                ).getData()
             ))
         return responses
 

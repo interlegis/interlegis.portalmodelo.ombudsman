@@ -96,7 +96,7 @@
         <span tal:content="response/review_state" />
       </div>
       <div>
-        <p data-linkify="this" tal:content="response/text" />
+        <p tal:content="structure response/text" />
       </div>
     </div>
     <p tal:condition="not:view/has_responses" i18n:translate="">
