@@ -4,6 +4,9 @@ Changelog
 1.0b3 (unreleased)
 ------------------
 
+- Suporte a adição de arquivos em Claims (refs. https://colab.interlegis.leg.br/ticket/2949).
+  [ericof]
+
 - Usamos o Portal Transforms para converter o texto de uma resposta para x-web-intelligent (refs. https://colab.interlegis.leg.br/ticket/2975).
   [ericof]
 

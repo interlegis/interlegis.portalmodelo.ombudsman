@@ -119,6 +119,39 @@
       </form>
     </div>
 
+    <h2 i18n:translate="">Files</h2>
+    <div tal:condition="view/has_files">
+      <table class="listing">
+        <thead>
+          <tr>
+            <th class="nosort">Id</th>
+            <th class="nosort" i18n:translate="">Title</th>
+            <th class="nosort" i18n:translate="">Description</th>
+            <th class="nosort" i18n:translate="">Responsible</th>
+            <th class="nosort" i18n:translate="">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr tal:repeat="file view/files">
+            <td tal:content="file/id"> 1 </td>
+            <td>
+              <a href=""
+                 tal:attributes="href file/url"
+                 tal:content="file/title"> File </a>
+            </td>
+            <td tal:content="file/description"> Description </td>
+            <td tal:content="file/creator"> Description </td>
+            <td tal:content="python:toLocalizedTime(file['date'], long_format=1)">
+              17/10/2013 04:32:00
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p tal:condition="not:view/has_files" i18n:translate="">
+        No files yet for this claim.
+    </p>
+
     <div tal:replace="structure provider:plone.belowcontentbody" />
 
   </tal:main>

@@ -78,6 +78,35 @@ class View(dexterity.DisplayForm):
     def has_responses(self):
         return len(self.responses()) > 0
 
+    def _files(self):
+        """Return a list of files for the current Claim ordered by creation date
+        """
+        path = '/'.join(self.context.getPhysicalPath())
+        ct = api.portal.get_tool('portal_catalog')
+        results = ct.searchResults(
+            portal_type='File',
+            path=path,
+            sort_on='created',
+        )
+        files = []
+        for id, brain in enumerate(results):
+            files.append(dict(
+                id=id + 1,
+                title=brain.Title,
+                creator=brain.Creator,
+                description=brain.Description,
+                url='{0}/at_download/file'.format(brain.getURL()),
+                date=brain.created,
+            ))
+        return files
+
+    @view.memoize
+    def files(self):
+        return self._files()
+
+    def has_files(self):
+        return len(self.files()) > 0
+
 
 class AddView(dexterity.AddForm):
     grok.name('Claim')
