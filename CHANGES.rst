@@ -4,7 +4,8 @@ Changelog
 1.0b3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Usamos o Portal Transforms para converter o texto de uma resposta para x-web-intelligent (refs. https://colab.interlegis.leg.br/ticket/2975).
+  [ericof]
 
 
 1.0b2 (2014-07-02)
