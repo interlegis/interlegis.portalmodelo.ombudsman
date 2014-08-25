@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0b3 (unreleased)
+1.0b3 (2014-08-25)
 ------------------
 
 - Suporte a adição de arquivos em Claims (refs. https://colab.interlegis.leg.br/ticket/2949).
