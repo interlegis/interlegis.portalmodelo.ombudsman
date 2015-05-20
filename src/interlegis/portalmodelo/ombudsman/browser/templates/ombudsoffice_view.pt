@@ -10,7 +10,7 @@
   <tal:core metal:define-macro="content-core">
 
     <div tal:condition="view/is_anonymous">
-      <form action="++add++Claim">
+      <form tal:attributes="action string:${context/absolute_url}/++add++Claim">
         <input type="submit" i18n:attributes="value" value="Add new claim" />
       </form>
     </div>
