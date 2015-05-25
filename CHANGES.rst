@@ -4,6 +4,9 @@ Changelog
 1.0b4 (unreleased)
 ------------------
 
+- Fix test test_setup.py
+  [marciomazza]
+
 - Fix Add Claim button for anonymous user
   [jeanferri]
 
