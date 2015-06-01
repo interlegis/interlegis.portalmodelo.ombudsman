@@ -46,7 +46,7 @@ class OmbudsOfficeTestCase(unittest.TestCase):
         self.assertTrue(IReferenceable.providedBy(self.office))
         self.assertTrue(IAttributeUUID.providedBy(self.office))
 
-    def test_constrains(self):
+    def test_constraints(self):
         from plone.api.exc import InvalidParameterError
         with self.assertRaises(InvalidParameterError) as cm:
             api.content.create(self.office, 'Document', 'document')

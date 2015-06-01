@@ -44,7 +44,7 @@ class ContentTypeTestCase(unittest.TestCase):
         self.assertTrue(IReferenceable.providedBy(self.claim))
         self.assertTrue(IAttributeUUID.providedBy(self.claim))
 
-    def test_constrains(self):
+    def test_constraints(self):
         with self.assertRaises(InvalidParameterError) as cm:
             api.content.create(self.portal, 'Claim', 'claim')
         self.assertIn(
