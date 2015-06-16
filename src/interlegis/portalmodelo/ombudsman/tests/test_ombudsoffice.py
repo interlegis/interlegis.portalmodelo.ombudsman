@@ -8,6 +8,7 @@ from plone.dexterity.interfaces import IDexterityFTI
 from plone.uuid.interfaces import IAttributeUUID
 from zope.component import createObject
 from zope.component import queryUtility
+from plone.i18n.normalizer.interfaces import IIDNormalizer
 
 import unittest
 
@@ -57,8 +58,9 @@ class OmbudsOfficeTestCase(unittest.TestCase):
 
     def test_get_emails_for_areas(self):
         self.office.areas = [
-            dict(responsible='John Doe', email='foo@bar.com', area='area1'),
-            dict(responsible='Mary Doe', email='baz@qux.com', area='area2'),
+            dict(responsible='John Doe', email='foo@bar.com', area='Area 1 Title'),
+            dict(responsible='Mary Doe', email='baz@qux.com', area='Area 2 Title'),
         ]
-        expected = dict(area1='foo@bar.com', area2='baz@qux.com')
+        expected = {'area-1-title': 'foo@bar.com', 'area-2-title': 'baz@qux.com'}
         self.assertDictEqual(self.office.get_emails_for_areas(), expected)
+
