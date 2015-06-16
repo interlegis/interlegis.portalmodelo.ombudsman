@@ -4,6 +4,9 @@ Changelog
 1.0b4 (unreleased)
 ------------------
 
+- Normalize area title so the Choice value can be used to find respective email address
+  [ramiroluz]
+
 - Fix test test_setup.py
   [marciomazza]
 
