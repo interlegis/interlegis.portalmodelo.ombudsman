@@ -1,8 +1,8 @@
 Changelog
 =========
 
-1.0b4 (unreleased)
-------------------
+1.0rc1 (2015-06-17)
+-------------------
 
 - Normalize area title so the Choice value can be used to find respective email address
   [ramiroluz]
