@@ -3,6 +3,7 @@ from five import grok
 from interlegis.portalmodelo.api.utils import type_cast
 from interlegis.portalmodelo.ombudsman.interfaces import IClaim
 from interlegis.portalmodelo.ombudsman.interfaces import IOmbudsOffice
+from interlegis.portalmodelo.ombudsman.adapters import IResponseContainer
 from plone import api
 # from plone.autoform.interfaces import READ_PERMISSIONS_KEY
 from plone.dexterity.interfaces import IDexterityFTI
@@ -53,8 +54,17 @@ class JSONView(grok.View):
             if obj.portal_type == 'Claim':
                 read_permission_mapping = [
                     'email', 'genre', 'age', 'address', 'postal_code']
+<<<<<<< Updated upstream
             # initialize a dictionary with the object uri
             fields = dict(uri=obj.absolute_url())  # XXX: should we use UUID?
+=======
+                # Set the review state for a Claim.
+                review_state = api.content.get_state(obj=obj)
+                fields['review_state'] = review_state
+                # Set a list of responses.
+                fields['responses'] = self.set_claim_response(obj)
+
+>>>>>>> Stashed changes
             # continue with the rest of the fields
             for name, field in getFieldsInOrder(schema):
                 if name in read_permission_mapping:
@@ -79,3 +89,19 @@ class JSONView(grok.View):
         """
         results = self.catalog(object_provides=IClaim.__identifier__)
         return self.serialize(results)
+
+    def set_claim_response(self, claim):
+        """Return a list of Claim response objects as dictionaries.
+        """
+        results = []
+        container = IResponseContainer(claim)
+        for id, response in enumerate(container):
+            if response is None:
+                continue  # response has been removed
+            results.append(dict(id=id + 1,
+                                creator=type_cast(response.creator),
+                                date=type_cast(response.date),
+                                review_state=type_cast(response.review_state),
+                                text=type_cast(response.text)))
+        return results
+
