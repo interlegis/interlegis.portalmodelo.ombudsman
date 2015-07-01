@@ -42,29 +42,26 @@ class JSONView(grok.View):
         s = []
         for i in results:
             obj = i.getObject()
+            # initialize a dictionary with the object uri
+            fields = dict(uri=obj.absolute_url()) # XXX: should we use UUID?
             # find out object schema to list its fields
             schema = getUtility(IDexterityFTI, name=obj.portal_type).lookupSchema()
             # XXX: probably there's a better way to accomplish this
-            #      but I do not know how to access the roles and permissions
-            #      of an anonymous user
+            # but I do not know how to access the roles and permissions
+            # of an anonymous user
             # read_permission_mapping = schema.queryTaggedValue(READ_PERMISSIONS_KEY)
             # if read_permission_mapping is None:
-            #     read_permission_mapping = {}
+            # read_permission_mapping = {}
             read_permission_mapping = []
             if obj.portal_type == 'Claim':
                 read_permission_mapping = [
                     'email', 'genre', 'age', 'address', 'postal_code']
-<<<<<<< Updated upstream
-            # initialize a dictionary with the object uri
-            fields = dict(uri=obj.absolute_url())  # XXX: should we use UUID?
-=======
                 # Set the review state for a Claim.
                 review_state = api.content.get_state(obj=obj)
                 fields['review_state'] = review_state
                 # Set a list of responses.
                 fields['responses'] = self.set_claim_response(obj)
-
->>>>>>> Stashed changes
+                
             # continue with the rest of the fields
             for name, field in getFieldsInOrder(schema):
                 if name in read_permission_mapping:
