@@ -14,6 +14,14 @@ from zope.schema import getFieldsInOrder
 import json
 
 
+def permission_map_for_anonymous():
+    if api.user.is_anonymous():
+        return [
+            'email', 'genre', 'age', 'address', 'postal_code',
+            'name', 'city', 'state']
+    return []
+
+
 class JSONView(grok.View):
     """Generates a JSON with information about Ombuds Offices and claims.
     """
@@ -54,9 +62,7 @@ class JSONView(grok.View):
             # read_permission_mapping = {}
             read_permission_mapping = []
             if obj.portal_type == 'Claim':
-                read_permission_mapping = [
-                    'email', 'genre', 'age', 'address', 'postal_code',
-                    'name', 'city', 'state']
+                read_permission_mapping = permission_map_for_anonymous()
 
                 # Date fields that are not being presented.
                 fields['modification_date'] = obj.modification_date.ISO8601()
