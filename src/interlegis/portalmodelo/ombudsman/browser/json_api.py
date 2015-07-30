@@ -55,13 +55,21 @@ class JSONView(grok.View):
             read_permission_mapping = []
             if obj.portal_type == 'Claim':
                 read_permission_mapping = [
-                    'email', 'genre', 'age', 'address', 'postal_code']
+                    'email', 'genre', 'age', 'address', 'postal_code',
+                    'name', 'city', 'state']
+
+                # Date fields that are not being presented.
+                fields['modification_date'] = obj.modification_date.ISO8601()
+                fields['creation_date'] = obj.creation_date.ISO8601()
                 # Set the review state for a Claim.
                 review_state = api.content.get_state(obj=obj)
                 fields['review_state'] = review_state
                 # Set a list of responses.
                 fields['responses'] = self.set_claim_response(obj)
-                
+
+            # TODO: Should we include attached fields information to the
+            # JSON API?
+
             # continue with the rest of the fields
             for name, field in getFieldsInOrder(schema):
                 if name in read_permission_mapping:
@@ -101,4 +109,3 @@ class JSONView(grok.View):
                                 review_state=type_cast(response.review_state),
                                 text=type_cast(response.text)))
         return results
-
