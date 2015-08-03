@@ -39,9 +39,9 @@ Create Ombuds Office
     ...              changes unexpectedly to "0" instead of "AA"
     Click Add Ombuds Office
     Input Text  css=#form-widgets-title  Ombuds Office
-    Input Text  css=#form-widgets-claim_types-AA-widgets-claim_type  Type1
-    Input Text  css=#form-widgets-areas-AA-widgets-area  Area1
-    Input Text  css=#form-widgets-areas-AA-widgets-responsible  Deep Thought
+    Input Text  css=#form-widgets-claim_types-0-widgets-claim_type  Type1
+    Input Text  css=#form-widgets-areas-0-widgets-area  Area1
+    Input Text  css=#form-widgets-areas-0-widgets-responsible  Deep Thought
     Input Text  css=#form-widgets-areas-0-widgets-email  foo@bar.com
     Click Button  Save
     Page Should Contain  Item created

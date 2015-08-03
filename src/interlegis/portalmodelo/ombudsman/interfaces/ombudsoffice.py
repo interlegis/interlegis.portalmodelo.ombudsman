@@ -69,6 +69,6 @@ class IOmbudsOffice(model.Schema):
     managers = schema.List(
         title=_(u'Managers'),
         description=_(u'Enter areas, name and email of responsible persons.'),
-        required=True,
+        required=False,
         value_type=schema.Choice(vocabulary=u'plone.app.vocabularies.Users'),
     )

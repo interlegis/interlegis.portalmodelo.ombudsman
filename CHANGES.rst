@@ -4,7 +4,8 @@ Changelog
 1.0rc2 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Fix test to add a new ombudsman office
+  [jeanferri]
 
 
 1.0rc1 (2015-06-17)
