@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0rc2 (unreleased)
+1.0rc2 (2015-08-26)
 -------------------
 
 - Fix test to add a new ombudsman office
