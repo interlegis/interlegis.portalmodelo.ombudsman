@@ -4,6 +4,9 @@ Changelog
 1.0rc3 (unreleased)
 -------------------
 
+- Add pagination to claims table
+  [jeanferri]
+
 - Fix protocol search for anonymous users in IDG themes
   [jeanferri]
 

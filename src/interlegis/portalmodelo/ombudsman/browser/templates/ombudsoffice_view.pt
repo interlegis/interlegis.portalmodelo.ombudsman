@@ -6,23 +6,34 @@
     metal:use-macro="context/main_template/macros/master"
     i18n:domain="interlegis.portalmodelo.ombudsman">
 <body>
-<metal:core fill-slot="content-core">
+<metal:core fill-slot="content-core"
+            tal:define="Batch python:modules['Products.CMFPlone'].Batch;
+                        b_size python:25;
+                        b_start python:0; b_start request/b_start | b_start;
+                        results view/claims;
+                        batch python:Batch(results, b_size, int(b_start), orphan=1);
+                        toLocalizedTime nocall:context/@@plone/toLocalizedTime;">
   <tal:core metal:define-macro="content-core">
 
-    <div tal:condition="view/is_anonymous">
-      <form tal:attributes="action string:${context/absolute_url}/++add++Claim">
-        <input type="submit" i18n:attributes="value" value="Add new claim" />
-      </form>
-    </div>
+    <form tal:attributes="action string:${context/absolute_url}/++add++Claim"
+          tal:condition="view/is_anonymous">
+      <input type="submit" i18n:attributes="value" value="Add new claim" id="add-new-claim" />
+    </form>
 
     <h2 i18n:translate="">Check claim</h2>
     <form tal:attributes="action string:${context/absolute_url}/@@search-claim">
       <input class="searchField" type="text" placeholder="Claim number" title="Claim number" name="claim"
-          i18n:attributes="placeholder; title" />
-      <input type="submit" i18n:attributes="value" value="Search" />
+             i18n:attributes="placeholder; title" />
+      <input type="submit" i18n:attributes="value" value="Search" class="searchButton" />
     </form>
 
-    <div>
+    <p class="discreet"
+       tal:condition="not: batch"
+       i18n:translate="description_no_claims_in_folder">
+        There are currently no claims in this ombudsman office.
+    </p>
+
+    <tal:listing tal:condition="batch">
       <h2 i18n:translate="">Open claims</h2>
       <table class="listing">
           <thead>
@@ -33,22 +44,22 @@
               <th class="column" i18n:translate="">Last Modification</th>
             </tr>
           </thead>
-          <tbody tal:define="toLocalizedTime nocall:context/@@plone/toLocalizedTime">
-            <tr tal:repeat="claim view/claims">
-              <td class="">
-                <a class="" href="" title="" tal:content="claim/title"
-                    tal:attributes="href claim/url; title claim/description" />
+          <tbody>
+            <tr tal:repeat="claim batch">
+              <td>
+                <a href="" title="" tal:content="claim/title"
+                   tal:attributes="href claim/url; title claim/description" />
               </td>
-              <td class=""
+              <td tal:attributes="class claim/klass"
                   tal:content="claim/review_state"
-                  tal:attributes="class claim/klass"
                   i18n:translate="" />
-              <td class="" tal:content="python:toLocalizedTime(claim['created'])" />
-              <td class="" tal:content="python:toLocalizedTime(claim['modified'], long_format=1)" />
+              <td tal:content="python:toLocalizedTime(claim['created'])" />
+              <td tal:content="python:toLocalizedTime(claim['modified'], long_format=1)" />
             </tr>
         </tbody>
       </table>
-    </div>
+      <div metal:use-macro="context/batch_macros/macros/navigation" />
+    </tal:listing>
 
   </tal:core>
 </metal:core>
