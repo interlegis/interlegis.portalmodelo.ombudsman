@@ -16,7 +16,7 @@
     </div>
 
     <h2 i18n:translate="">Check claim</h2>
-    <form action="@@search-claim">
+    <form tal:attributes="action string:${context/absolute_url}/@@search-claim">
       <input class="searchField" type="text" placeholder="Claim number" title="Claim number" name="claim"
           i18n:attributes="placeholder; title" />
       <input type="submit" i18n:attributes="value" value="Search" />

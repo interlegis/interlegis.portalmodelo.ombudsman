@@ -4,7 +4,8 @@ Changelog
 1.0rc3 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Fix protocol search for anonymous users in IDG themes
+  [jeanferri]
 
 
 1.0rc2 (2015-08-26)
