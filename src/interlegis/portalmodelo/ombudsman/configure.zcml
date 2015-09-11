@@ -30,6 +30,11 @@
       />
 
   <permission
+      id="interlegis.portalmodelo.ombudsman.ViewClaimPersonalInfo"
+      title="interlegis.portalmodelo.ombudsman: View Claim Personal Info"
+      />
+
+  <permission
       id="interlegis.portalmodelo.ombudsman.AddResponse"
       title="interlegis.portalmodelo.ombudsman: Add Response"
       />
@@ -70,5 +75,8 @@
       />
 
   <include file="profiles.zcml" />
+
+  <!-- Passos de atualizacao -->
+  <include package=".upgrades" />
 
 </configure>

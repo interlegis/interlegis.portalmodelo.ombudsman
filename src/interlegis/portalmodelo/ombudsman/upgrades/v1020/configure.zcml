@@ -1,0 +1,30 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:gs="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    i18n_domain="interlegis.portalmodelo.ombudsman">
+
+    <!-- Profile -->
+    <gs:registerProfile
+        name="default"
+        title="interlegis.portalmodelo.ombudsman: Versao 1020"
+        directory="profile"
+        description="Atualiza o pacote interlegis.portalmodelo.ombudsman para versao 1020"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        i18n:attributes="title; description"
+        />
+
+    <!-- Upgrade -->
+    <gs:upgradeSteps
+        source="1010"
+        destination="1020"
+        profile="interlegis.portalmodelo.ombudsman:default">
+
+        <gs:upgradeStep
+            title="Add view personal info permission to contributors"
+            description="The new ViewClaimPersonalInfo permission must be granted to contributors."
+            handler=".handler.grant_view_to_contributors"
+        />
+    </gs:upgradeSteps>
+</configure>

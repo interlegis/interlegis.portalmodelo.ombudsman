@@ -44,13 +44,14 @@ class IClaim(model.Schema):
         required=True,
     )
 
+    form.read_permission(email='interlegis.portalmodelo.ombudsman.ViewClaimPersonalInfo')
     name = schema.TextLine(
         title=_(u'Name'),
         description=_(u'help_name', default=u''),
         required=True,
     )
 
-    form.read_permission(email='cmf.ModifyPortalContent')
+    form.read_permission(email='interlegis.portalmodelo.ombudsman.ViewClaimPersonalInfo')
     email = schema.ASCIILine(
         title=_(u'Email'),
         description=_(
@@ -60,14 +61,14 @@ class IClaim(model.Schema):
         required=True,
     )
 
-    form.read_permission(address='cmf.ModifyPortalContent')
+    form.read_permission(email='interlegis.portalmodelo.ombudsman.ViewClaimPersonalInfo')
     address = schema.TextLine(
         title=_(u'Address'),
         description=_(u'help_address', default=u'Informe seu endereço.'),
         required=False,
     )
 
-    form.read_permission(postal_code='cmf.ModifyPortalContent')
+    form.read_permission(email='interlegis.portalmodelo.ombudsman.ViewClaimPersonalInfo')
     postal_code = schema.TextLine(
         title=_(u'Postal code'),
         description=_(u'help_postal_code', default=u''),

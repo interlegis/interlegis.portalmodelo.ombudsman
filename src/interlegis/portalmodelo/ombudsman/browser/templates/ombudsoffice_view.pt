@@ -11,7 +11,7 @@
 
     <div tal:condition="view/is_anonymous">
       <form tal:attributes="action string:${context/absolute_url}/++add++Claim">
-        <input type="submit" i18n:attributes="value" value="Add new claim" />
+        <input type="submit" id="add-new-claim" i18n:attributes="value" value="Add new claim" />
       </form>
     </div>
 

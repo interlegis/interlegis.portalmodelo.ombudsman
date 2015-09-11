@@ -55,7 +55,7 @@
 
     <div id="content-core">
 
-      <fieldset class="personalInformation" tal:condition="not:view/is_anonymous">
+      <fieldset class="personalInformation" tal:condition="view/can_view_personal_info">
         <legend i18n:translate="">Personal information</legend>
         <div>
           <label class="horizontal" tal:content="structure view/w/name/label" />
