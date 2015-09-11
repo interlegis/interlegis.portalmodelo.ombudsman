@@ -4,6 +4,9 @@ Changelog
 1.0rc3 (unreleased)
 -------------------
 
+- Improve claim view
+  [jeanferri]
+
 - Add pagination to claims table
   [jeanferri]
 

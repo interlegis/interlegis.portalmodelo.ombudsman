@@ -66,12 +66,14 @@
           <span tal:content="structure view/w/email/render" />
         </div>
         <div>
-          <label class="horizontal" tal:content="structure view/w/city/label" /> -
-          <label class="horizontal" tal:content="structure view/w/state/label" />
-          <span tal:content="structure view/w/city/render" /> -
-          <span tal:content="structure view/w/state/render" />
+          <label class="horizontal" tal:content="structure view/w/address/label" />
+          <span tal:content="structure view/w/address/render" />
         </div>
         <div>
+          <label class="horizontal" tal:content="structure view/w/city/label" />
+          <span tal:content="structure view/w/city/render" />
+          <label class="horizontal" tal:content="structure view/w/state/label" />
+          <span tal:content="structure view/w/state/render" />
           <label class="horizontal" tal:content="structure view/w/postal_code/label" />
           <span tal:content="structure view/w/postal_code/render" />
         </div>
@@ -92,7 +94,7 @@
         <span tal:content="python:toLocalizedTime(response['date'], long_format=1)" />
       </div>
       <div>
-        <label class="horizontal" i18n:translate="">State</label>
+        <label class="horizontal" i18n:translate="">Review State</label>
         <span tal:content="response/review_state" />
       </div>
       <div>
@@ -107,7 +109,7 @@
       <h2 i18n:translate="">Add response</h2>
       <form action="@@add-response"
           tal:attributes="action string:${context/absolute_url}/@@add-response">
-        <label class="horizontal" i18n:translate="">State</label>
+        <label class="horizontal" i18n:translate="">Review State</label>
         <select name="transition">
           <option value="" tal:repeat="transition view/transitions"
               tal:content="transition/title"
