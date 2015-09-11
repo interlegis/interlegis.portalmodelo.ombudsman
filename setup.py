@@ -3,7 +3,7 @@
 from setuptools import find_packages
 from setuptools import setup
 
-version = '1.0rc2.dev0'
+version = '1.0rc3.dev0'
 description = 'Sistema de Ouvidoria do Portal Modelo do Interlegis.'
 long_description = (
     open('README.rst').read() + '\n' +
