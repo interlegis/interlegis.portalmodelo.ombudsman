@@ -52,7 +52,7 @@ msgstr "Pendente (%(count)d)"
 
 #: interlegis/portalmodelo/ombudsman/profiles/default/workflows/claim_workflow/definition.xml
 msgid "Reject claim"
-msgstr "Rejeitar solicitação"
+msgstr "Rejeitar"
 
 #: interlegis/portalmodelo/ombudsman/profiles/default/workflows/claim_workflow/definition.xml
 msgid "Rejected"
@@ -73,4 +73,7 @@ msgstr "O Revisor rejeita a solicitação"
 #: interlegis/portalmodelo/ombudsman/profiles/default/workflows/claim_workflow/definition.xml
 msgid "Simple workflow to deal with public claims."
 msgstr "Um workflow simples para solicitações públicas."
+
+msgid "Move"
+msgstr "Tramitar"
 

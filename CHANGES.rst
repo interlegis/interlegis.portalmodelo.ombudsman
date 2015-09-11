@@ -4,6 +4,9 @@ Changelog
 1.0rc3 (unreleased)
 -------------------
 
+- Update translations
+  [jeanferri]
+
 - Improve claim view
   [jeanferri]
 

@@ -298,3 +298,9 @@ msgstr ""
 msgid "help_state"
 msgstr ""
 
+msgid "Files"
+msgstr ""
+
+msgid "No files yet for this claim."
+msgstr ""
+
