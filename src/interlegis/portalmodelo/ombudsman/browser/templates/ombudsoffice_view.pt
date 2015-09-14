@@ -14,7 +14,6 @@
                         batch python:Batch(results, b_size, int(b_start), orphan=1);
                         toLocalizedTime nocall:context/@@plone/toLocalizedTime;">
   <tal:core metal:define-macro="content-core">
-
     <form tal:attributes="action string:${context/absolute_url}/++add++Claim"
           tal:condition="view/is_anonymous">
       <input type="submit" i18n:attributes="value" value="Add new claim" id="add-new-claim" />

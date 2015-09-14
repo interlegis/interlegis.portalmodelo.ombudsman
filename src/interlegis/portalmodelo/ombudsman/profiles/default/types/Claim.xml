@@ -21,6 +21,9 @@
   <!-- add permission -->
   <property name="add_permission">interlegis.portalmodelo.ombudsman.AddClaim</property>
 
+  <!-- view claim personal info permission
+  <property name="view_claim_personal_info">interlegis.portalmodelo.ombudsman.ViewClaimPersonalInfo</property>-->
+
   <!-- enabled behaviors -->
   <property name="behaviors">
     <element value="interlegis.portalmodelo.ombudsman.behaviors.INameFromDate" />

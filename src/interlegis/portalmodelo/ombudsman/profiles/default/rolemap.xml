@@ -10,6 +10,13 @@
       <role name="Owner"/>
       <role name="Contributor"/>
     </permission>
+    <permission name="interlegis.portalmodelo.ombudsman: View Claim Personal Info" acquire="True">
+      <role name="Manager"/>
+      <role name="Site Administrator"/>
+      <role name="Owner"/>
+      <role name="Contributor"/>
+      <role name="Member"/>
+    </permission>
     <permission name="interlegis.portalmodelo.ombudsman: Add Response" acquire="True">
       <role name="Manager"/>
       <role name="Site Administrator"/>

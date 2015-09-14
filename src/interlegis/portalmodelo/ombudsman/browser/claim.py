@@ -23,9 +23,13 @@ class View(dexterity.DisplayForm):
 
     @property
     def can_add_response(self):
-        mt = api.portal.get_tool('portal_membership')
-        return mt.checkPermission(
-            'interlegis.portalmodelo.ombudsman.AddResponse', self.context)
+        return api.user.has_permission(
+            'interlegis.portalmodelo.ombudsman: Add Response')
+
+    @property
+    def can_view_personal_info(self):
+        return api.user.has_permission(
+            'interlegis.portalmodelo.ombudsman: View Claim Personal Info')
 
     def is_anonymous(self):
         return api.user.is_anonymous()
