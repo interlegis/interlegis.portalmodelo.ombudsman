@@ -4,6 +4,9 @@ Changelog
 1.0rc3 (unreleased)
 -------------------
 
+- Sort claims table for modification date reversed
+  [jeanferri]
+
 - Fix translations
   [jeanferri]
 

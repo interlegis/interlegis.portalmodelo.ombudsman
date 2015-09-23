@@ -27,7 +27,7 @@ class View(grok.View):
     def _claims(self):
         """Return a list of claims inside the current Ombuds Office.
 
-        :returns: a list of claims
+        :returns: a list of claims sorted by modified reverse
         :rtype: list of dictionaries
         """
         results = self.context.listFolderContents({'portal_type': 'Claim'})
@@ -47,7 +47,7 @@ class View(grok.View):
                 created=i.created(),
                 modified=i.modified(),
             ))
-        return claims
+        return sorted(claims, key=lambda m: m['modified'], reverse=True)
 
     @view.memoize
     def claims(self):
