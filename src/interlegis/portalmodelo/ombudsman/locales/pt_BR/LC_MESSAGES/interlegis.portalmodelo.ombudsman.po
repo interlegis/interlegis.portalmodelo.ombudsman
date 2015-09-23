@@ -155,7 +155,7 @@ msgstr "Item criado."
 
 #: interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:33
 msgid "Last Modification"
-msgstr "Última modificação"
+msgstr "Modificado"
 
 #: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:70
 msgid "Managers"
@@ -221,7 +221,7 @@ msgstr "Buscar"
 
 #: interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:32
 msgid "Sent Date"
-msgstr "Data de envio"
+msgstr "Enviado"
 
 #: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:97
 #: interlegis/portalmodelo/ombudsman/interfaces/claim.py:95

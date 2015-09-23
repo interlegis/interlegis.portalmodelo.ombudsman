@@ -37,7 +37,7 @@
       <table class="listing">
           <thead>
             <tr>
-              <th class="column" i18n:translate="">Claim</th>
+              <th class="column" i18n:translate="">Topic</th>
               <th class="column" i18n:translate="">Review State</th>
               <th class="column" i18n:translate="">Sent Date</th>
               <th class="column" i18n:translate="">Last Modification</th>

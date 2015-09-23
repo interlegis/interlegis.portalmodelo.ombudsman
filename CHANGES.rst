@@ -4,6 +4,12 @@ Changelog
 1.0rc3 (unreleased)
 -------------------
 
+- Fix translations
+  [jeanferri]
+
+- Add permission to view claim personal info, with tests
+  [ramiroluz]
+
 - Update translations
   [jeanferri]
 
