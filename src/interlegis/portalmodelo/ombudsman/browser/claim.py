@@ -40,10 +40,11 @@ class View(dexterity.DisplayForm):
         wftool = api.portal.get_tool('portal_workflow')
         available_transitions = wftool.getTransitionsFor(self.context)
         current_state = api.content.get_state(self.context)
-        current_title = wftool.getTitleForStateOnType(current_state, 'Claim')
+        #current_title = wftool.getTitleForStateOnType(current_state, 'Claim')
 
         # as first, we add the current state as a no-change condition
-        transitions = [dict(id=current_state, title=PMF(current_title))]
+        #transitions = [dict(id=current_state, title=PMF(current_title))]
+        transitions = [dict(id=current_state, title=PMF('No change'))]
 
         # now we add the all available transitions
         for i in available_transitions:

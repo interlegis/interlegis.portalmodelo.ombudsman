@@ -77,3 +77,6 @@ msgstr "Um workflow simples para solicitações públicas."
 msgid "Move"
 msgstr "Tramitar"
 
+msgid "No change"
+msgstr "Sem alteração"
+

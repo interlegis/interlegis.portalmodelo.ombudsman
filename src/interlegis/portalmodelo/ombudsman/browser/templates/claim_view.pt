@@ -19,7 +19,8 @@
 <body>
 <metal:main fill-slot="main">
   <tal:main metal:define-macro="main"
-      define="toLocalizedTime nocall:context/@@plone/toLocalizedTime">
+      define="toLocalizedTime nocall:context/@@plone/toLocalizedTime;
+              wtool context/@@plone_tools/workflow;">
 
     <div tal:replace="structure provider:plone.abovecontenttitle" />
 
@@ -31,7 +32,7 @@
 
     <fieldset class="claimTitle">
       <h2 tal:content="context/title" />
-      <p class="" tal:content="context/description" />
+      <p class="commentBody" tal:content="context/description" />
     </fieldset>
 
     <fieldset class="claimInformation">
@@ -46,6 +47,13 @@
       <div>
         <label class="horizontal" tal:content="structure view/w/area/label" />:
         <span tal:content="structure view/w/area/render" />
+      </div>
+      <div>
+        <label class="horizontal" i18n:translate="">Review State</label>:
+        <span i18n:domain="plone" i18n:translate=""
+              tal:define="review_state python:wtool.getInfoFor(context, 'review_state', '')"
+              tal:attributes="class python:'state-'+str(review_state)"
+              tal:content="python:wtool.getTitleForStateOnType(review_state, 'Claim')" />
       </div>
     </fieldset>
 
@@ -95,11 +103,11 @@
         <span tal:content="python:toLocalizedTime(response['date'], long_format=1)" />
       </div>
       <div>
-        <label class="horizontal" i18n:translate="">Review State</label>:
+        <label class="horizontal" i18n:translate="">Status</label>:
         <span tal:content="response/review_state" />
       </div>
       <div>
-        <p tal:content="structure response/text" />
+        <p class="commentBody" tal:content="structure response/text" />
       </div>
     </div>
     <p tal:condition="not:view/has_responses" i18n:translate="">
@@ -110,7 +118,7 @@
       <h2 i18n:translate="">Add response</h2>
       <form action="@@add-response"
           tal:attributes="action string:${context/absolute_url}/@@add-response">
-        <label class="horizontal" i18n:translate="">Review State</label>
+        <label class="horizontal" i18n:translate="">Action</label>
         <select name="transition">
           <option value="" tal:repeat="transition view/transitions"
               tal:content="transition/title"

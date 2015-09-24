@@ -4,6 +4,9 @@ Changelog
 1.0rc3 (unreleased)
 -------------------
 
+- Improve review state stuff on response select box
+  [jeanferri]
+
 - Remove ':' from translations
   [jeanferri]
 

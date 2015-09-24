@@ -200,7 +200,7 @@ msgstr "CEP"
 
 #: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:118
 msgid "Response text"
-msgstr "Texto da resposta"
+msgstr "Insira aqui o texto da resposta..."
 
 #: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:83
 msgid "Responses"
@@ -213,7 +213,7 @@ msgstr "Responsável"
 
 #: interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:31
 msgid "Review State"
-msgstr "Estado/Ação:"
+msgstr "Status atual"
 
 #: interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:22
 msgid "Search"
@@ -304,4 +304,7 @@ msgstr "Nº"
 
 msgid "Title"
 msgstr "Título"
+
+msgid "Action"
+msgstr "Procedimento"
 
