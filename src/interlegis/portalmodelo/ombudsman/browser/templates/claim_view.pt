@@ -87,7 +87,8 @@
       </div>
       <div>
         <label class="horizontal" i18n:translate="">Responsible</label>
-        <span tal:content="response/creator" />
+        <a tal:attributes="href string:${portal_url}/author/${response/creator}"
+           tal:content="response/creator">author</a>
       </div>
       <div>
         <label class="horizontal" i18n:translate="">Date</label>
@@ -142,7 +143,10 @@
                  tal:content="file/title"> File </a>
             </td>
             <td tal:content="file/description"> Description </td>
-            <td tal:content="file/creator"> Description </td>
+            <td>
+              <a tal:attributes="href string:${portal_url}/author/${file/creator}"
+                 tal:content="file/creator">author</a>
+            </td>
             <td tal:content="python:toLocalizedTime(file['date'], long_format=1)">
               17/10/2013 04:32:00
             </td>

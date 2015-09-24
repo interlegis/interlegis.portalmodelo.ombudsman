@@ -4,6 +4,9 @@ Changelog
 1.0rc3 (unreleased)
 -------------------
 
+- Link the name of author for responses and attachments
+  [jeanferri]
+
 - Sort claims table for modification date reversed
   [jeanferri]
 
