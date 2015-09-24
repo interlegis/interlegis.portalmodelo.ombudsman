@@ -24,14 +24,11 @@
 
     <div tal:replace="structure provider:plone.abovecontenttitle" />
 
-    <h1 class="documentFirstHeading" i18n:translate="">
-      Claim <span tal:replace="context/id" i18n:name="id" />
-    </h1>
+    <h1 class="documentFirstHeading" tal:content="context/title">Title</h1>
 
     <div tal:replace="structure provider:plone.belowcontenttitle" />
 
     <fieldset class="claimTitle">
-      <h2 tal:content="context/title" />
       <p class="commentBody" tal:content="context/description" />
     </fieldset>
 
@@ -47,6 +44,10 @@
       <div>
         <label class="horizontal" tal:content="structure view/w/area/label" />:
         <span tal:content="structure view/w/area/render" />
+      </div>
+      <div>
+        <label class="horizontal" i18n:translate="">Protocol</label>:
+        <span tal:content="context/id" />
       </div>
       <div>
         <label class="horizontal" i18n:translate="">Review State</label>:
@@ -118,7 +119,7 @@
       <h2 i18n:translate="">Add response</h2>
       <form action="@@add-response"
           tal:attributes="action string:${context/absolute_url}/@@add-response">
-        <label class="horizontal" i18n:translate="">Action</label>
+        <label class="horizontal" i18n:translate="">Action</label>:
         <select name="transition">
           <option value="" tal:repeat="transition view/transitions"
               tal:content="transition/title"

@@ -4,6 +4,9 @@ Changelog
 1.0rc3 (unreleased)
 -------------------
 
+- Change the title in claim view
+  [jeanferri]
+
 - Improve review state stuff on response select box
   [jeanferri]
 

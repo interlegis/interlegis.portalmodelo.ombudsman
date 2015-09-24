@@ -308,3 +308,6 @@ msgstr "Título"
 msgid "Action"
 msgstr "Procedimento"
 
+msgid "Protocol"
+msgstr "Protocolo"
+
