@@ -304,3 +304,9 @@ msgstr ""
 msgid "No files yet for this claim."
 msgstr ""
 
+msgid "Id"
+msgstr ""
+
+msgid "Title"
+msgstr ""
+

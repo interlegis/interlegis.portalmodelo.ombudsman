@@ -36,15 +36,15 @@
 
     <fieldset class="claimInformation">
       <div>
-        <label class="horizontal" i18n:translate="">Created</label>
+        <label class="horizontal" i18n:translate="">Created</label>:
         <span tal:content="python:toLocalizedTime(context.created(), long_format=1)" />
       </div>
       <div>
-        <label class="horizontal" tal:content="structure view/w/kind/label" />
+        <label class="horizontal" tal:content="structure view/w/kind/label" />:
         <span tal:content="structure view/w/kind/render" />
       </div>
       <div>
-        <label class="horizontal" tal:content="structure view/w/area/label" />
+        <label class="horizontal" tal:content="structure view/w/area/label" />:
         <span tal:content="structure view/w/area/render" />
       </div>
     </fieldset>
@@ -58,23 +58,23 @@
       <fieldset class="personalInformation" tal:condition="view/can_view_personal_info">
         <legend i18n:translate="">Personal information</legend>
         <div>
-          <label class="horizontal" tal:content="structure view/w/name/label" />
+          <label class="horizontal" tal:content="structure view/w/name/label" />:
           <span tal:content="structure view/w/name/render" />
         </div>
         <div>
-          <label class="horizontal" tal:content="structure view/w/email/label" />
+          <label class="horizontal" tal:content="structure view/w/email/label" />:
           <span tal:content="structure view/w/email/render" />
         </div>
         <div>
-          <label class="horizontal" tal:content="structure view/w/address/label" />
+          <label class="horizontal" tal:content="structure view/w/address/label" />:
           <span tal:content="structure view/w/address/render" />
         </div>
         <div>
-          <label class="horizontal" tal:content="structure view/w/city/label" />
+          <label class="horizontal" tal:content="structure view/w/city/label" />:
           <span tal:content="structure view/w/city/render" />
-          <label class="horizontal" tal:content="structure view/w/state/label" />
+          <label class="horizontal" tal:content="structure view/w/state/label" />:
           <span tal:content="structure view/w/state/render" />
-          <label class="horizontal" tal:content="structure view/w/postal_code/label" />
+          <label class="horizontal" tal:content="structure view/w/postal_code/label" />:
           <span tal:content="structure view/w/postal_code/render" />
         </div>
       </fieldset>
@@ -86,16 +86,16 @@
         <h3 tal:content="response/id"/>
       </div>
       <div>
-        <label class="horizontal" i18n:translate="">Responsible</label>
+        <label class="horizontal" i18n:translate="">Responsible</label>:
         <a tal:attributes="href string:${portal_url}/author/${response/creator}"
            tal:content="response/creator">author</a>
       </div>
       <div>
-        <label class="horizontal" i18n:translate="">Date</label>
+        <label class="horizontal" i18n:translate="">Date</label>:
         <span tal:content="python:toLocalizedTime(response['date'], long_format=1)" />
       </div>
       <div>
-        <label class="horizontal" i18n:translate="">Review State</label>
+        <label class="horizontal" i18n:translate="">Review State</label>:
         <span tal:content="response/review_state" />
       </div>
       <div>
@@ -127,7 +127,7 @@
       <table class="listing">
         <thead>
           <tr>
-            <th class="nosort">Id</th>
+            <th class="nosort" i18n:translate="">Id</th>
             <th class="nosort" i18n:translate="">Title</th>
             <th class="nosort" i18n:translate="">Description</th>
             <th class="nosort" i18n:translate="">Responsible</th>

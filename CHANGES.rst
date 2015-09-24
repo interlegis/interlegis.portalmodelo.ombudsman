@@ -4,6 +4,9 @@ Changelog
 1.0rc3 (unreleased)
 -------------------
 
+- Remove ':' from translations
+  [jeanferri]
+
 - Link the name of author for responses and attachments
   [jeanferri]
 
