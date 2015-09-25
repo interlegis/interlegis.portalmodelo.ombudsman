@@ -1,8 +1,8 @@
 Changelog
 =========
 
-1.0rc3 (unreleased)
--------------------
+1.0 (2015-09-25)
+----------------
 
 - Change the title in claim view
   [jeanferri]
