@@ -122,6 +122,10 @@ msgid "Template for fist email after claim created."
 msgstr "Template de e-mail que será enviado após a criação da primeira solicitação."
 
 #: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:82
+msgid "Template for further email after alter state of claim."
+msgstr "Template de e-mail para mensagens que serão enviadas após a alteração de estado do chamado."
+
+#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:84
 msgid "Use vars {title}, {protocol}, {url}, {name}, {email}, {address}, {city}, {state}, {postalcode}, {status} to customize your template."
 msgstr "Utilize as nomeclaturas: {title}, {protocol}, {url}, {name}, {email}, {address}, {city}, {state}, {postalcode}, {status} para customizar seu template."
 
@@ -248,6 +252,10 @@ msgstr "Estado"
 #: interlegis/portalmodelo/ombudsman/browser/response.py:23
 msgid "There were some errors. Required input is missing."
 msgstr "Ocorreram alguns erros. Campo obrigatório não preenchido."
+
+#: interlegis/portalmodelo/ombudsman/browser/response.py:23
+msgid "Required input is missing."
+msgstr "Campo obrigatório não preenchido."
 
 #: interlegis/portalmodelo/ombudsman/interfaces/claim.py:12
 msgid "Tipos de solicitação"

@@ -80,3 +80,5 @@ msgstr "Tramitar"
 msgid "No change"
 msgstr "Sem alteração"
 
+msgid "Required input is missing."
+msgstr "Campo obrigatório não preenchido."
