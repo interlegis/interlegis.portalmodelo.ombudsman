@@ -32,7 +32,7 @@
         There are currently no claims in this ombudsman office.
     </p>
 
-    <tal:listing tal:condition="batch">
+    <tal:listing tal:condition="python:batch and view.display_claims_for_anon()">
       <h2 i18n:translate="">Open claims</h2>
       <table class="listing">
           <thead>

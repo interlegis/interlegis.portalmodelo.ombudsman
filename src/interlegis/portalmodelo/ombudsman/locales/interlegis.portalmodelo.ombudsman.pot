@@ -228,6 +228,11 @@ msgstr ""
 msgid "Sent Date"
 msgstr ""
 
+#. Default: "There are currently no claims in this ombudsman office."
+#: interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:32
+msgid "description_no_claims_in_folder"
+msgstr ""
+
 #: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:97
 #: interlegis/portalmodelo/ombudsman/interfaces/claim.py:95
 msgid "State"

@@ -68,6 +68,11 @@ class View(grok.View):
             results[s] = [i for i in self.claims() if i['state'] == s]
         return results
 
+    def display_claims_for_anon(self):
+        if self.is_anonymous():
+            return self.context.display_claims
+        return api.user.has_permission(
+            'interlegis.portalmodelo.ombudsman: Add Response')
 
 class SearchView(grok.View):
     """Search for a claim with the id specified and redirect to it, if found.
