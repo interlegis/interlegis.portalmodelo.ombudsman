@@ -82,6 +82,15 @@ class IOmbudsOffice(model.Schema):
         required=True,
     )
 
+    form.widget('email_template_states', WysiwygFieldWidget)
+    email_template_states = schema.Text(
+        title=_(u'Template for further email after alter state of claim.'),
+        description=_(u'Use vars {title}, {protocol}, {url}, {name}, {email}, \
+{address}, {city}, {state}, {postalcode}, {status} to customize your template.'),
+        required=True,
+    )
+
+
     display_claims = schema.Bool(
         title=_(u'Display claims for anonymous?'),
         description=_(u''),

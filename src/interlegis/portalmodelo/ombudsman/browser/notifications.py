@@ -19,8 +19,16 @@ class ClaimMail(BaseMail):
     def html(self):
         wftool = api.portal.get_tool('portal_workflow')
         claim = self.context
-        wfstate = api.content.get_state(claim)
-        status = claim.translate(wftool.getTitleForStateOnType(wfstate, 'Claim'))
+        wf_state_id = api.content.get_state(claim)
+        # initial state define first template
+        if wf_state_id == 'pending':
+            template = claim.aq_parent.email_template
+        # for other states define second template
+        else:
+            template = claim.aq_parent.email_template_states
+
+        wf_state_title = wftool.getTitleForStateOnType(wf_state_id, 'Claim')
+        status = claim.translate(wf_state_title)
         protocol = claim.getId()
         title = claim.title
         url = claim.absolute_url()
@@ -38,7 +46,7 @@ class ClaimMail(BaseMail):
         code = claim.postal_code
         if not code:
             code = u''
-        template = claim.aq_parent.email_template
+        
         template = template.replace('{protocol}', protocol)
         template = template.replace('{title}', title)
         template = template.replace('{url}', url)
