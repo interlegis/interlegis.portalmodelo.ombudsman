@@ -74,13 +74,15 @@
           <label class="horizontal" tal:content="structure view/w/email/label|nothing" />:
           <span tal:content="structure view/w/email/render|nothing" />
         </div>
-        <div>
+        <div tal:condition="view/w/address">
           <label class="horizontal" tal:content="structure view/w/address/label|nothing" />:
           <span tal:content="structure view/w/address/render|nothing" />
         </div>
         <div>
-          <label class="horizontal" tal:content="structure view/w/city/label|nothing" />:
-          <span tal:content="structure view/w/city/render" />
+          <label class="horizontal"
+                 tal:condition="view/w/city/render" 
+                 tal:content="structure view/w/city/label|nothing" />:
+          <span tal:condition="view/w/city/render" tal:content="structure view/w/city/render|nothing" />
           <label class="horizontal" tal:content="structure view/w/state/label|nothing" />:
           <span tal:content="structure view/w/state/render|nothing" />
           <label class="horizontal" tal:content="structure view/w/postal_code/label|nothing" />:
@@ -127,7 +129,7 @@
         </select>
         <textarea placeholder="Response text" title="Response text" rows="20" name="text"
             i18n:attributes="placeholder; title"></textarea>
-        <input type="submit" i18n:attributes="value" value="Add" />
+        <button type="submit" i18n:translate="" id="btn-claim-submit" class="btn btn-primary">Add</button>
       </form>
     </div>
 

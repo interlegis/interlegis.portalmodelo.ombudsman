@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from collective.watcherlist.browser import BaseMail
+from Acquisition import aq_parent
 from plone import api
 
 class ClaimMail(BaseMail):
@@ -21,11 +22,12 @@ class ClaimMail(BaseMail):
         claim = self.context
         wf_state_id = api.content.get_state(claim)
         # initial state define first template
+        # TODO: get automaticaly default workflow state
         if wf_state_id == 'pending':
-            template = claim.aq_parent.email_template
+            template = aq_parent(claim).email_template
         # for other states define second template
         else:
-            template = claim.aq_parent.email_template_states
+            template = aq_parent(claim).email_template_states
 
         wf_state_title = wftool.getTitleForStateOnType(wf_state_id, 'Claim')
         status = claim.translate(wf_state_title)
@@ -57,4 +59,5 @@ class ClaimMail(BaseMail):
         template = template.replace('{state}', state)
         template = template.replace('{postal_code}', code)
         template = template.replace('{status}', status)
+
         return template
