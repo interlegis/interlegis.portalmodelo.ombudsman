@@ -9,9 +9,43 @@ from plone.dexterity.utils import addContentToContainer
 from plone.directives import dexterity
 from plone.memoize import view
 from Products.CMFPlone import PloneMessageFactory as PMF
+from z3c.form import field
+
+from zope.interface import implements, Interface
+
+from zope.schema.interfaces import IField
+from zope.component import adapts
+
+from plone.formwidget.recaptcha.widget import ReCaptchaFieldWidget
+
+from zope.component import getMultiAdapter, queryUtility
+
+from Products.CMFCore.utils import getToolByName
+
+from plone.formwidget.recaptcha.validator import WrongCaptchaCode  # noqa
+
+from z3c.form import validator
+
+from z3c.form.interfaces import IValidator
+
+class CaptchaValidator(validator.SimpleFieldValidator):
+    implements(IValidator)
+    adapts(Interface, Interface, IField, Interface)
+
+    def validate(self, value):
+        super(CaptchaValidator, self).validate(value)
+        captcha = getMultiAdapter((aq_inner(self.context), self.request),
+                                  name='recaptcha')
+        if not captcha.verify(input=value):
+            raise WrongCaptchaCode
+        else:
+            return True
+
+# Register Captcha validator for the Captcha field in the ICaptcha Form
+validator.WidgetValidatorDiscriminators(CaptchaValidator,
+                                        field=IClaim['captcha'])
 
 grok.templatedir('templates')
-
 
 class View(dexterity.DisplayForm):
     """Default view for Claim content type.
@@ -116,6 +150,8 @@ class View(dexterity.DisplayForm):
 class AddView(dexterity.AddForm):
     grok.name('Claim')
     grok.require('interlegis.portalmodelo.ombudsman.AddClaim')
+    fields = field.Fields(IClaim)
+    fields['captcha'].widgetFactory = ReCaptchaFieldWidget
 
     def update(self):
         # XXX: currently, any user can add a claim
@@ -127,5 +163,31 @@ class AddView(dexterity.AddForm):
         redirect to the container.
         """
         container = aq_inner(self.context)
+
+        data, errors = self.extractData()
+        if errors:
+            return
+
+        # Validate Captcha
+        portal_membership = getToolByName(self.context, 'portal_membership')
+        # anon = portal_membership.isAnonymousUser()
+        # if anon:
+        #     if not 'captcha' in data:
+        #         data['captcha'] = u""
+        #     captcha = CaptchaValidator(self.context,
+        #                                self.request,
+        #                                None,
+        #                                IClaim['captcha'],
+        #                                None)
+        #     captcha.validate(data['captcha'])
+        if not 'captcha' in data:
+            data['captcha'] = u""
+        captcha = CaptchaValidator(self.context,
+                                   self.request,
+                                   None,
+                                   IClaim['captcha'],
+                                   None)
+        captcha.validate(data['captcha'])
+
         obj = addContentToContainer(container, object, checkConstraints=False)
         self.immediate_view = '{0}/{1}'.format(container.absolute_url(), obj.id)

@@ -87,3 +87,9 @@ class IClaim(model.Schema):
         required=False,
         vocabulary=u'brasil.estados',
     )
+
+    captcha = schema.TextLine(
+        title=u"ReCaptcha",
+        description=u"",
+        required=False
+    )
