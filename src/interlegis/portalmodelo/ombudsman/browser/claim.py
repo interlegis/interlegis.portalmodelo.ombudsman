@@ -2,6 +2,7 @@
 from Acquisition import aq_inner
 from five import grok
 from interlegis.portalmodelo.ombudsman.adapters import IResponseContainer
+from interlegis.portalmodelo.ombudsman.browser import validator
 from interlegis.portalmodelo.ombudsman.interfaces import IBrowserLayer
 from interlegis.portalmodelo.ombudsman.interfaces import IClaim
 from plone import api
@@ -9,6 +10,8 @@ from plone.dexterity.utils import addContentToContainer
 from plone.directives import dexterity
 from plone.memoize import view
 from Products.CMFPlone import PloneMessageFactory as PMF
+
+from Products.CMFCore.utils import getToolByName
 
 grok.templatedir('templates')
 
@@ -40,10 +43,8 @@ class View(dexterity.DisplayForm):
         wftool = api.portal.get_tool('portal_workflow')
         available_transitions = wftool.getTransitionsFor(self.context)
         current_state = api.content.get_state(self.context)
-        #current_title = wftool.getTitleForStateOnType(current_state, 'Claim')
 
         # as first, we add the current state as a no-change condition
-        #transitions = [dict(id=current_state, title=PMF(current_title))]
         transitions = [dict(id=current_state, title=PMF('No change'))]
 
         # now we add the all available transitions
@@ -127,5 +128,37 @@ class AddView(dexterity.AddForm):
         redirect to the container.
         """
         container = aq_inner(self.context)
+
+        data, errors = self.extractData()
+        if errors:
+            return
+
+        # Validate Captcha
+        portal_membership = getToolByName(self.context, 'portal_membership')
+        anon = portal_membership.isAnonymousUser()
+        if anon:
+            '''
+            TODO: It would be better to only show captcha to anonymous. In this
+            case we should not validate the captcha.
+            '''
+            pass
+        #     if not 'captcha' in data:
+        #         data['captcha'] = u""
+        #     captcha = CaptchaValidator(self.context,
+        #                                self.request,
+        #                                None,
+        #                                IClaim['captcha'],
+        #                                None)
+        #     captcha.validate(data['captcha'])
+        if 'captcha' not in data:
+            data['captcha'] = u""
+        captcha = validator.CaptchaValidator(self.context,
+                                             self.request,
+                                             None,
+                                             IClaim['captcha'],
+                                             None)
+        captcha.validate(data['captcha'])
+
         obj = addContentToContainer(container, object, checkConstraints=False)
-        self.immediate_view = '{0}/{1}'.format(container.absolute_url(), obj.id)
+        self.immediate_view = '{0}/{1}'.format(
+            container.absolute_url(), obj.id)
