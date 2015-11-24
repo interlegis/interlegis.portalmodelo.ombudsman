@@ -3,6 +3,7 @@ from interlegis.portalmodelo.ombudsman import _
 from plone.directives import form
 from plone.supermodel import model
 from zope import schema
+from zope.interface import Interface
 
 
 class IClaim(model.Schema):
@@ -88,6 +89,9 @@ class IClaim(model.Schema):
         vocabulary=u'brasil.estados',
     )
 
+class ICaptcha(Interface):
+    """Captcha/ReCaptcha text field to extend the existing comment form.
+    """
     captcha = schema.TextLine(
         title=u"ReCaptcha",
         description=u"",

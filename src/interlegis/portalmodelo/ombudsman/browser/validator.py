@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
 from Acquisition import aq_inner
-from interlegis.portalmodelo.ombudsman.interfaces import IClaim
-
+from interlegis.portalmodelo.ombudsman.interfaces.claim import ICaptcha
 from zope.interface import implements, Interface, Invalid
 
 from zope.schema.interfaces import IField
 from zope.component import adapts
 from zope.component import provideAdapter
-from Products.CMFPlone import PloneMessageFactory as PMF
+from zope.i18nmessageid import MessageFactory
 
 from zope.component import getMultiAdapter
 
@@ -16,6 +15,8 @@ from plone.formwidget.recaptcha.validator import WrongCaptchaCode  # noqa
 from z3c.form import validator
 
 from z3c.form.interfaces import IValidator
+
+_ = MessageFactory('interlegis.portalmodelo.ombudsman')
 
 
 class CaptchaValidator(validator.SimpleFieldValidator):
@@ -28,12 +29,12 @@ class CaptchaValidator(validator.SimpleFieldValidator):
                                   name='recaptcha')
 
         if not captcha.verify(input=value):
-            raise Invalid(PMF(u'You entered an invalid captcha.'))
+            raise Invalid(_(u'You entered an invalid captcha.'))
         else:
             return True
 
 # Register Captcha validator for the Captcha field in the ICaptcha Form
 validator.WidgetValidatorDiscriminators(CaptchaValidator,
-                                        field=IClaim['captcha'])
+                                        field=ICaptcha['captcha'])
 
 provideAdapter(CaptchaValidator)

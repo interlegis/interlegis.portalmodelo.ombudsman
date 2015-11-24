@@ -5,14 +5,16 @@ from interlegis.portalmodelo.ombudsman.adapters import IResponseContainer
 from interlegis.portalmodelo.ombudsman.browser import validator
 from interlegis.portalmodelo.ombudsman.interfaces import IBrowserLayer
 from interlegis.portalmodelo.ombudsman.interfaces import IClaim
+from interlegis.portalmodelo.ombudsman.interfaces.claim import ICaptcha
+from plone.registry.interfaces import IRegistry
 from plone import api
 from plone.dexterity.utils import addContentToContainer
 from plone.directives import dexterity
 from plone.memoize import view
 from Products.CMFPlone import PloneMessageFactory as PMF
 from z3c.form import field
-
-from plone.formwidget.recaptcha.widget import ReCaptchaFieldWidget
+from zope.component import queryUtility
+from plone.formwidget.recaptcha.interfaces import IReCaptchaSettings
 
 grok.templatedir('templates')
 
@@ -118,10 +120,26 @@ class View(dexterity.DisplayForm):
 class AddView(dexterity.AddForm):
     grok.name('Claim')
     grok.require('interlegis.portalmodelo.ombudsman.AddClaim')
-    fields = field.Fields(IClaim)
-    fields['captcha'].widgetFactory = ReCaptchaFieldWidget
+
+    def show_recaptcha_widget(self):
+        import pdb; pdb.set_trace()
+
+        anon = api.user.is_anonymous()
+        quick_installer = api.portal.get_tool(name='portal_quickinstaller')
+        recaptcha_installed =  quick_installer.isProductInstalled('plone.formwidget.recaptcha')
+        recaptcha_configured = False
+        if recaptcha_installed:
+            registry = queryUtility(IRegistry)
+            settings = registry.forInterface(IReCaptchaSettings)
+            recaptcha_configured = (len(settings.public_key) > 0)
+        return (anon and recaptcha_installed and recaptcha_configured)
 
     def update(self):
+        if self.show_recaptcha_widget():
+            self.fields = field.Fields(IClaim)
+            self.fields += field.Fields(ICaptcha).select('captcha')
+            from plone.formwidget.recaptcha import ReCaptchaFieldWidget
+            self.fields['captcha'].widgetFactory = ReCaptchaFieldWidget
         # XXX: currently, any user can add a claim
         #      do we need to check if the user is anonymous?
         super(AddView, self).update()
