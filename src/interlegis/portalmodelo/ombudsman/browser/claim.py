@@ -14,9 +14,6 @@ from plone.memoize import view
 from Products.CMFPlone import PloneMessageFactory as PMF
 from z3c.form import field
 from zope.component import queryUtility
-from plone.formwidget.recaptcha.interfaces import IReCaptchaSettings
-
-from Products.CMFCore.utils import getToolByName
 
 grok.templatedir('templates')
 
@@ -125,10 +122,12 @@ class AddView(dexterity.AddForm):
 
     def show_recaptcha_widget(self):
         anon = api.user.is_anonymous()
-        quick_installer = api.portal.get_tool(name='portal_quickinstaller')
-        recaptcha_installed =  quick_installer.isProductInstalled('plone.formwidget.recaptcha')
+        q_i = api.portal.get_tool(name='portal_quickinstaller')
+        recaptcha_installed = q_i.isProductInstalled(
+            'plone.formwidget.recaptcha')
         recaptcha_configured = False
         if recaptcha_installed:
+            from plone.formwidget.recaptcha.interfaces import IReCaptchaSettings
             registry = queryUtility(IRegistry)
             settings = registry.forInterface(IReCaptchaSettings)
             recaptcha_configured = (len(settings.public_key) > 0)

@@ -10,13 +10,12 @@ from zope.i18nmessageid import MessageFactory
 
 from zope.component import getMultiAdapter
 
-from plone.formwidget.recaptcha.validator import WrongCaptchaCode  # noqa
-
 from z3c.form import validator
 
 from z3c.form.interfaces import IValidator
 
 _ = MessageFactory('interlegis.portalmodelo.ombudsman')
+
 
 class CaptchaValidator(validator.SimpleFieldValidator):
     implements(IValidator)
