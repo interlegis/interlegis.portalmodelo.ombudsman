@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from collective.z3cform.datagridfield import DataGridFieldFactory
 from collective.z3cform.datagridfield import DictRow
+from plone.app.z3cform.wysiwyg import WysiwygFieldWidget
 from interlegis.portalmodelo.ombudsman import _
 from plone.autoform import directives as form
 from plone.supermodel import model
@@ -72,3 +73,27 @@ class IOmbudsOffice(model.Schema):
         required=False,
         value_type=schema.Choice(vocabulary=u'plone.app.vocabularies.Users'),
     )
+
+    form.widget('email_template', WysiwygFieldWidget)
+    email_template = schema.Text(
+        title=_(u'Template for fist email after claim created.'),
+        description=_(u'Use vars {title}, {protocol}, {url}, {name}, {email}, \
+{address}, {city}, {state}, {postalcode}, {status} to customize your template.'),
+        required=True,
+    )
+
+    form.widget('email_template_states', WysiwygFieldWidget)
+    email_template_states = schema.Text(
+        title=_(u'Template for further email after alter state of claim.'),
+        description=_(u'Use vars {title}, {protocol}, {url}, {name}, {email}, \
+{address}, {city}, {state}, {postalcode}, {status} to customize your template.'),
+        required=True,
+    )
+
+
+    display_claims = schema.Bool(
+        title=_(u'Display claims for anonymous?'),
+        description=_(u''),
+        required=True,
+    )
+
