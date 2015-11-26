@@ -79,7 +79,7 @@ class IOmbudsOffice(model.Schema):
         title=_(u'Template for fist email after claim created.'),
         description=_(u'Use vars {title}, {protocol}, {url}, {name}, {email}, \
 {address}, {city}, {state}, {postalcode}, {status} to customize your template.'),
-        required=True,
+        required=False,
     )
 
     form.widget('email_template_states', WysiwygFieldWidget)
@@ -87,13 +87,14 @@ class IOmbudsOffice(model.Schema):
         title=_(u'Template for further email after alter state of claim.'),
         description=_(u'Use vars {title}, {protocol}, {url}, {name}, {email}, \
 {address}, {city}, {state}, {postalcode}, {status} to customize your template.'),
-        required=True,
+        required=False,
     )
 
 
     display_claims = schema.Bool(
         title=_(u'Display claims for anonymous?'),
         description=_(u''),
-        required=True,
+        required=False,
+        default=True,
     )
 

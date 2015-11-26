@@ -4,7 +4,14 @@ Changelog
 1.1 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Fix email for non existing templates
+  [jeanferri]
+
+- Add option to hide the open claims listing
+  [hersonrodrigues]
+
+- Add templates for emails customization
+  [hersonrodrigues]
 
 
 1.0 (2015-09-25)
