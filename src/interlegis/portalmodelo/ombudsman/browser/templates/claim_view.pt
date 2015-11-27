@@ -38,16 +38,16 @@
         <span tal:content="python:toLocalizedTime(context.created(), long_format=1)" />
       </div>
       <div>
-        <label class="horizontal" tal:content="structure view/w/kind/label" />:
-        <span tal:content="structure view/w/kind/render" />
+        <label class="horizontal" tal:content="structure view/w/kind/label|nothing" />:
+        <span tal:content="structure view/w/kind/render|nothing" />
       </div>
       <div>
-        <label class="horizontal" tal:content="structure view/w/area/label" />:
-        <span tal:content="structure view/w/area/render" />
+        <label class="horizontal" tal:content="structure view/w/area/label|nothing" />:
+        <span tal:content="structure view/w/area/render|nothing" />
       </div>
       <div>
         <label class="horizontal" i18n:translate="">Protocol</label>:
-        <span tal:content="context/id" />
+        <span tal:content="context/id|nothing" />
       </div>
       <div>
         <label class="horizontal" i18n:translate="">Review State</label>:
@@ -67,24 +67,26 @@
       <fieldset class="personalInformation" tal:condition="view/can_view_personal_info">
         <legend i18n:translate="">Personal information</legend>
         <div>
-          <label class="horizontal" tal:content="structure view/w/name/label" />:
-          <span tal:content="structure view/w/name/render" />
+          <label class="horizontal" tal:content="structure view/w/name/label|nothing" />:
+          <span tal:content="structure view/w/name/render|nothing" />
         </div>
         <div>
-          <label class="horizontal" tal:content="structure view/w/email/label" />:
-          <span tal:content="structure view/w/email/render" />
+          <label class="horizontal" tal:content="structure view/w/email/label|nothing" />:
+          <span tal:content="structure view/w/email/render|nothing" />
+        </div>
+        <div tal:condition="view/w/address">
+          <label class="horizontal" tal:content="structure view/w/address/label|nothing" />:
+          <span tal:content="structure view/w/address/render|nothing" />
         </div>
         <div>
-          <label class="horizontal" tal:content="structure view/w/address/label" />:
-          <span tal:content="structure view/w/address/render" />
-        </div>
-        <div>
-          <label class="horizontal" tal:content="structure view/w/city/label" />:
-          <span tal:content="structure view/w/city/render" />
-          <label class="horizontal" tal:content="structure view/w/state/label" />:
-          <span tal:content="structure view/w/state/render" />
-          <label class="horizontal" tal:content="structure view/w/postal_code/label" />:
-          <span tal:content="structure view/w/postal_code/render" />
+          <label class="horizontal"
+                 tal:condition="view/w/city/render" 
+                 tal:content="structure view/w/city/label|nothing" />:
+          <span tal:condition="view/w/city/render" tal:content="structure view/w/city/render|nothing" />
+          <label class="horizontal" tal:content="structure view/w/state/label|nothing" />:
+          <span tal:content="structure view/w/state/render|nothing" />
+          <label class="horizontal" tal:content="structure view/w/postal_code/label|nothing" />:
+          <span tal:content="structure view/w/postal_code/render|nothing" />
         </div>
       </fieldset>
     </div>
@@ -97,7 +99,7 @@
       <div>
         <label class="horizontal" i18n:translate="">Responsible</label>:
         <a tal:attributes="href string:${portal_url}/author/${response/creator}"
-           tal:content="response/creator">author</a>
+           tal:content="response/creator|nothing">author</a>
       </div>
       <div>
         <label class="horizontal" i18n:translate="">Date</label>:
@@ -105,7 +107,7 @@
       </div>
       <div>
         <label class="horizontal" i18n:translate="">Status</label>:
-        <span tal:content="response/review_state" />
+        <span tal:content="response/review_state|nothing" />
       </div>
       <div>
         <p class="commentBody" tal:content="structure response/text" />
@@ -122,12 +124,12 @@
         <label class="horizontal" i18n:translate="">Action</label>:
         <select name="transition">
           <option value="" tal:repeat="transition view/transitions"
-              tal:content="transition/title"
+              tal:content="transition/title|nothing"
               tal:attributes="value transition/id" />
         </select>
         <textarea placeholder="Response text" title="Response text" rows="20" name="text"
             i18n:attributes="placeholder; title"></textarea>
-        <input type="submit" i18n:attributes="value" value="Add" />
+        <button type="submit" i18n:translate="" id="btn-claim-submit" class="btn btn-primary">Add</button>
       </form>
     </div>
 
@@ -149,12 +151,12 @@
             <td>
               <a href=""
                  tal:attributes="href file/url"
-                 tal:content="file/title"> File </a>
+                 tal:content="file/title|nothing"> File </a>
             </td>
-            <td tal:content="file/description"> Description </td>
+            <td tal:content="file/description|nothing"> Description </td>
             <td>
               <a tal:attributes="href string:${portal_url}/author/${file/creator}"
-                 tal:content="file/creator">author</a>
+                 tal:content="file/creator|nothing">author</a>
             </td>
             <td tal:content="python:toLocalizedTime(file['date'], long_format=1)">
               17/10/2013 04:32:00

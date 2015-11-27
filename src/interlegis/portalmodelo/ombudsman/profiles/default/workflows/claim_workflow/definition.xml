@@ -116,7 +116,7 @@
       after_script=""
       i18n:attributes="title">
     <description i18n:translate="">Editor moves a claim</description>
-    <action category="workflow" icon="" url="%(content_url)s/content_status_modify?workflow_action=publish">Move</action>
+    <action category="workflow" icon="" url="%(content_url)s/content_status_modify?workflow_action=move">Move</action>
     <guard/>
   </transition>
   <transition
@@ -164,7 +164,7 @@
       i18n:attributes="title">
     <description i18n:translate="">Editor accepts a claim</description>
     <action
-        url="%(content_url)s/content_status_modify?workflow_action=submit"
+        url="%(content_url)s/content_status_modify?workflow_action=accept"
         category="workflow"
         icon=""
         i18n:translate="">Accept</action>
