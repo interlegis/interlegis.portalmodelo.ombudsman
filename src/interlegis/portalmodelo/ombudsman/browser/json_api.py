@@ -7,6 +7,8 @@ from interlegis.portalmodelo.ombudsman.adapters import IResponseContainer
 from plone import api
 # from plone.autoform.interfaces import READ_PERMISSIONS_KEY
 from plone.dexterity.interfaces import IDexterityFTI
+from plone.behavior.interfaces import IBehaviorAssignable
+from plone import behavior
 from Products.CMFPlone.interfaces import IPloneSiteRoot
 from zope.component import getUtility
 from zope.schema import getFieldsInOrder
@@ -72,6 +74,13 @@ class JSONView(grok.View):
                 fields['review_state'] = review_state
                 # Set a list of responses.
                 fields['responses'] = self.set_claim_response(obj)
+                if self.have_behavior('ICategorization', obj):
+                    fields['subject'] = obj.subject
+
+                if self.have_behavior('IRelatedItems', obj):
+                    items = [r.to_object.absolute_url() for r in obj.relatedItems]
+                    fields['related_items'] = items 
+
 
             # TODO: Should we include attached fields information to the
             # JSON API?
@@ -87,6 +96,10 @@ class JSONView(grok.View):
                 fields[name] = type_cast(value)
             s.append(fields)
         return s
+
+    def have_behavior(self, behavior, obj):
+        type_info = obj.getTypeInfo()
+        return behavior in [b.split('.')[-1] for b in type_info.behaviors]
 
     def get_ombudsoffices(self):
         """Return list of Ombuds Office objects on site as a list of
