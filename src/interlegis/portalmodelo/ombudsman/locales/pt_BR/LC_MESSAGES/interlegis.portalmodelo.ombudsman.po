@@ -18,69 +18,60 @@ msgstr ""
 msgid "A claim to the Ombudsman."
 msgstr "Uma solicitação ao Ouvidor."
 
-#: interlegis/portalmodelo/ombudsman/config.py:22
-msgid "Acima de 71"
-msgstr ""
+#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:124
+msgid "Action"
+msgstr "Procedimento"
 
-#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:120
+#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:132
 msgid "Add"
 msgstr "Adicionar"
 
-#: interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:14
+#: interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:19
 msgid "Add new claim"
 msgstr "Adicionar nova solicitação"
 
-#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:109
+#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:121
 msgid "Add response"
 msgstr "Adicionar resposta"
 
-#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:77
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:67
 msgid "Address"
 msgstr "Endereço"
 
-#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:70
-msgid "Age"
-msgstr "Idade"
-
-#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:22
-#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:23
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:23
+#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:24
 msgid "Area"
 msgstr "Área"
 
-#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:63
+#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:64
 msgid "Areas"
 msgstr "Áreas"
 
-#: interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:18
+#: interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:22
 msgid "Check claim"
 msgstr "Consultar solicitação"
 
-#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:89
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:80
 msgid "City"
 msgstr "Cidade"
 
-#: interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:30
 #: interlegis/portalmodelo/ombudsman/profiles/default/types/Claim.xml
 msgid "Claim"
 msgstr "Solicitação"
 
-#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:21
-msgid "Claim ${id}"
-msgstr "Solicitação ${id}"
-
-#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:14
+#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:15
 msgid "Claim Type"
 msgstr "Tipo de solicitação"
 
-#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:55
+#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:56
 msgid "Claim Types"
 msgstr "Tipos de solicitação"
 
-#: interlegis/portalmodelo/ombudsman/browser/ombudsoffice.py:92
+#: interlegis/portalmodelo/ombudsman/browser/ombudsoffice.py:97
 msgid "Claim id not found."
 msgstr "Número de protocolo não encontrado."
 
-#: interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:20
+#: interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:24
 msgid "Claim number"
 msgstr "Número de protocolo"
 
@@ -88,251 +79,209 @@ msgstr "Número de protocolo"
 msgid "Container to store claims to the Ombudsman."
 msgstr "Pasta para armazenar solicitações ao Ouvidor."
 
-#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:33
+#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:37
 msgid "Created"
 msgstr "Criada em"
 
-#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:93
+#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:105
 msgid "Date"
 msgstr "Data"
 
-#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:48
+#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:143
+#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:49
 msgid "Description"
 msgstr "Descrição"
 
-#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:39
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:40
 msgid "Details"
 msgstr "Detalhes"
 
-#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:54
-#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:33
+#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:95
+msgid "Display claims for anonymous?"
+msgstr "Exibir a lista de solicitações para os usuários anônimos?"
+
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:57
+#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:34
 msgid "Email"
 msgstr "E-mail"
 
-#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:64
+#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:65
 msgid "Enter areas, name and email of responsible persons."
 msgstr "Informe area, nome e email das pessoas responsáveis."
 
-#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:77
-msgid "Display claims for anonymous?"
-msgstr "Exibir a lista de solicitações para os usuários anônimos?"
+#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:57
+msgid "Enter claim types."
+msgstr "Tipos de solicitação"
+
+#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:136
+msgid "Files"
+msgstr "Arquivos anexados"
+
+#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:141
+msgid "Id"
+msgstr "Nº"
+
+#: interlegis/portalmodelo/ombudsman/browser/response.py:40
+msgid "Item created."
+msgstr "Solicitação realizada."
+
+#: interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:43
+msgid "Last Modification"
+msgstr "Modificado"
+
+#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:71
+msgid "Managers"
+msgstr "Administradores"
+
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:50
+msgid "Name"
+msgstr "Nome"
+
+#: interlegis/portalmodelo/ombudsman/browser/ombudsoffice.py:88
+msgid "No claim id specified."
+msgstr "Número de protocolo não informado."
+
+#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:168
+msgid "No files yet for this claim."
+msgstr "Esta solicitação ainda não contém nenhum arquivo anexado."
+
+#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:116
+msgid "No responses yet for this claim."
+msgstr "Ainda não existem respostas para esta solicitação."
+
+#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:43
+#: interlegis/portalmodelo/ombudsman/profiles/default/types/OmbudsOffice.xml
+msgid "Ombuds Office"
+msgstr "Ouvidoria"
+
+#: interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:36
+msgid "Open claims"
+msgstr "Solicitações abertas"
+
+#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:68
+msgid "Personal information"
+msgstr "Informação pessoal"
+
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:74
+msgid "Postal code"
+msgstr "CEP"
+
+#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:49
+msgid "Protocol"
+msgstr "Protocolo"
+
+#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:130
+msgid "Response text"
+msgstr "Insira aqui o texto da resposta..."
+
+#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:94
+msgid "Responses"
+msgstr "Respostas"
+
+#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:100
+#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:29
+msgid "Responsible"
+msgstr "Responsável"
+
+#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:53
+#: interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:41
+msgid "Review State"
+msgstr "Status atual"
+
+#: interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:26
+msgid "Search"
+msgstr "Buscar"
+
+#: interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:42
+msgid "Sent Date"
+msgstr "Enviado"
+
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:86
+msgid "State"
+msgstr "Estado"
+
+#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:109
+msgid "Status"
+msgstr ""
 
 #: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:79
 msgid "Template for fist email after claim created."
 msgstr "Template de e-mail que será enviado após a criação da primeira solicitação."
 
-#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:82
+#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:87
 msgid "Template for further email after alter state of claim."
 msgstr "Template de e-mail para mensagens que serão enviadas após a alteração de estado do chamado."
 
-#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:84
-msgid "Use vars {title}, {protocol}, {url}, {name}, {email}, {address}, {city}, {state}, {postalcode}, {status} to customize your template."
-msgstr "Utilize as nomeclaturas: {title}, {protocol}, {url}, {name}, {email}, {address}, {city}, {state}, {postalcode}, {status} para customizar seu template."
-
-#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:56
-msgid "Enter claim types."
-msgstr "Tipos de solicitação"
-
-#: interlegis/portalmodelo/ombudsman/config.py:16
-msgid "Entre 16 e 20"
-msgstr ""
-
-#: interlegis/portalmodelo/ombudsman/config.py:17
-msgid "Entre 21 e 30"
-msgstr ""
-
-#: interlegis/portalmodelo/ombudsman/config.py:18
-msgid "Entre 31 e 40"
-msgstr ""
-
-#: interlegis/portalmodelo/ombudsman/config.py:19
-msgid "Entre 41 e 50"
-msgstr ""
-
-#: interlegis/portalmodelo/ombudsman/config.py:20
-msgid "Entre 51 e 60"
-msgstr ""
-
-#: interlegis/portalmodelo/ombudsman/config.py:21
-msgid "Entre 61 e 70"
-msgstr ""
-
-#: interlegis/portalmodelo/ombudsman/config.py:10
-msgid "Feminino"
-msgstr ""
-
-#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:63
-msgid "Genre"
-msgstr "Gênero"
-
-#: interlegis/portalmodelo/ombudsman/browser/response.py:35
-msgid "Item created."
-msgstr "Solicitação realizada."
-
-#: interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:33
-msgid "Last Modification"
-msgstr "Modificado"
-
-#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:70
-msgid "Managers"
-msgstr "Administradores"
-
-#: interlegis/portalmodelo/ombudsman/config.py:11
-msgid "Masculino"
-msgstr ""
-
-#: interlegis/portalmodelo/ombudsman/config.py:15
-msgid "Menos que 15"
-msgstr ""
-
-#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:48
-msgid "Name"
-msgstr "Nome"
-
-#: interlegis/portalmodelo/ombudsman/browser/ombudsoffice.py:83
-msgid "No claim id specified."
-msgstr "Número de protocolo não informado."
-
-#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:104
-msgid "No responses yet for this claim."
-msgstr "Ainda não existem respostas para esta solicitação."
-
-#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:42
-#: interlegis/portalmodelo/ombudsman/profiles/default/types/OmbudsOffice.xml
-msgid "Ombuds Office"
-msgstr "Ouvidoria"
-
-#: interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:26
-msgid "Open claims"
-msgstr "Solicitações abertas"
-
-#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:53
-msgid "Personal information"
-msgstr "Informação pessoal"
-
-#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:83
-msgid "Postal code"
-msgstr "CEP"
-
-#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:118
-msgid "Response text"
-msgstr "Insira aqui o texto da resposta..."
-
-#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:83
-msgid "Responses"
-msgstr "Respostas"
-
-#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:89
-#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:28
-msgid "Responsible"
-msgstr "Responsável"
-
-#: interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:31
-msgid "Review State"
-msgstr "Status atual"
-
-#: interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:22
-msgid "Search"
-msgstr "Buscar"
-
-#: interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:32
-msgid "Sent Date"
-msgstr "Enviado"
-
-#. Default: "There are currently no claims in this ombudsman office."
-#: interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:32
-msgid "description_no_claims_in_folder"
-msgstr "Atualmente não há solicitações neste ouvidoria."
-
-#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:97
-#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:95
-msgid "State"
-msgstr "Estado"
-
-#: interlegis/portalmodelo/ombudsman/browser/response.py:23
+#: interlegis/portalmodelo/ombudsman/browser/response.py:25
 msgid "There were some errors. Required input is missing."
 msgstr "Ocorreram alguns erros. Campo obrigatório não preenchido."
 
-#: interlegis/portalmodelo/ombudsman/browser/response.py:23
-msgid "Required input is missing."
-msgstr "Campo obrigatório não preenchido."
-
-#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:12
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:13
 msgid "Tipos de solicitação"
 msgstr "Tipo de solicitação"
 
-#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:32
+#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:142
+msgid "Title"
+msgstr "Título"
+
+#: interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:40
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:33
 msgid "Topic"
 msgstr "Assunto"
 
+#: interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:80
+msgid "Use vars {title}, {protocol}, {url}, {name}, {email}, {address}, {city}, {state}, {postalcode}, {status} to customize your template."
+msgstr "Utilize as nomeclaturas: {title}, {protocol}, {url}, {name}, {email}, {address}, {city}, {state}, {postalcode}, {status} para customizar seu template."
+
+#: interlegis/portalmodelo/ombudsman/browser/validator.py:30
+msgid "You entered an invalid captcha."
+msgstr "Captcha fornecido é inválido."
+
+#. Default: "There are currently no claims in this ombudsman office."
+#: interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:29
+msgid "description_no_claims_in_folder"
+msgstr "Atualmente não há solicitações nesta ouvidoria."
+
 #. Default: "Informe seu endereço."
-#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:78
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:68
 msgid "help_address"
 msgstr ""
 
-#. Default: "Selecione sua idade."
-#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:71
-msgid "help_age"
-msgstr ""
-
 #. Default: "Selecione a área para a qual a solicitação será enviada."
-#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:23
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:24
 msgid "help_area"
 msgstr ""
 
 #. Default: "Informe sua cidade."
-#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:90
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:81
 msgid "help_city"
 msgstr ""
 
 #. Default: "Por favor, informe detalhes adicionais."
-#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:40
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:41
 msgid "help_description"
 msgstr ""
 
 #. Default: "Informe o email para onde serão enviadas informações sobre a solicitação."
-#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:55
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:58
 msgid "help_email"
 msgstr ""
 
-#. Default: "Selecione seu sexo."
-#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:64
-msgid "help_genre"
-msgstr ""
-
 #. Default: "Selecione o tipo de solicitação."
-#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:13
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:14
 msgid "help_kind"
 msgstr ""
 
-#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:49
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:51
 msgid "help_name"
 msgstr ""
 
-#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:84
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:75
 msgid "help_postal_code"
 msgstr ""
 
 #. Default: "Informe seu estado."
-#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:96
+#: interlegis/portalmodelo/ombudsman/interfaces/claim.py:87
 msgid "help_state"
 msgstr ""
-
-msgid "Files"
-msgstr "Arquivos anexados"
-
-msgid "No files yet for this claim."
-msgstr "Esta solicitação ainda não contém nenhum arquivo anexado."
-
-msgid "Id"
-msgstr "Nº"
-
-msgid "Title"
-msgstr "Título"
-
-msgid "Action"
-msgstr "Procedimento"
-
-msgid "Protocol"
-msgstr "Protocolo"
 

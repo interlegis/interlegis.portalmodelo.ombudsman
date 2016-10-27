@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2014-04-23 13:34+0000\n"
+"POT-Creation-Date: 2015-11-27 19:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,69 +17,63 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: plone\n"
 
-#: interlegis/portalmodelo/ombudsman/profiles/default/workflows/claim_workflow/definition.xml
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/profiles/default/workflows/claim_workflow/definition.xml
 msgid "Accept"
 msgstr ""
 
-#: interlegis/portalmodelo/ombudsman/profiles/default/workflows/claim_workflow/definition.xml
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/profiles/default/workflows/claim_workflow/definition.xml
 msgid "Accepted"
 msgstr ""
 
-#: interlegis/portalmodelo/ombudsman/profiles/default/workflows/claim_workflow/definition.xml
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/profiles/default/workflows/claim_workflow/definition.xml
 msgid "Claim Workflow"
 msgstr ""
 
-#: interlegis/portalmodelo/ombudsman/profiles/default/workflows/claim_workflow/definition.xml
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/profiles/default/workflows/claim_workflow/definition.xml
 msgid "Editor accepts a claim"
 msgstr ""
 
-#: interlegis/portalmodelo/ombudsman/profiles/default/workflows/claim_workflow/definition.xml
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/profiles/default/workflows/claim_workflow/definition.xml
 msgid "Editor moves a claim"
 msgstr ""
 
-#: interlegis/portalmodelo/ombudsman/profiles/default/workflows/claim_workflow/definition.xml
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/profiles/default/workflows/claim_workflow/definition.xml
 msgid "Editor resolves a claim"
 msgstr ""
 
-#: interlegis/portalmodelo/ombudsman/profiles/default/workflows/claim_workflow/definition.xml
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/profiles/default/workflows/claim_workflow/definition.xml
 msgid "Moving"
 msgstr ""
 
-#: interlegis/portalmodelo/ombudsman/profiles/default/workflows/claim_workflow/definition.xml
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/profiles/default/workflows/claim_workflow/definition.xml
 msgid "Pending"
 msgstr ""
 
-#: interlegis/portalmodelo/ombudsman/profiles/default/workflows/claim_workflow/definition.xml
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/profiles/default/workflows/claim_workflow/definition.xml
 msgid "Pending (%(count)d)"
 msgstr ""
 
-#: interlegis/portalmodelo/ombudsman/profiles/default/workflows/claim_workflow/definition.xml
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/profiles/default/workflows/claim_workflow/definition.xml
 msgid "Reject claim"
 msgstr ""
 
-#: interlegis/portalmodelo/ombudsman/profiles/default/workflows/claim_workflow/definition.xml
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/profiles/default/workflows/claim_workflow/definition.xml
 msgid "Rejected"
 msgstr ""
 
-#: interlegis/portalmodelo/ombudsman/profiles/default/workflows/claim_workflow/definition.xml
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/profiles/default/workflows/claim_workflow/definition.xml
 msgid "Resolve"
 msgstr ""
 
-#: interlegis/portalmodelo/ombudsman/profiles/default/workflows/claim_workflow/definition.xml
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/profiles/default/workflows/claim_workflow/definition.xml
 msgid "Resolved"
 msgstr ""
 
-#: interlegis/portalmodelo/ombudsman/profiles/default/workflows/claim_workflow/definition.xml
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/profiles/default/workflows/claim_workflow/definition.xml
 msgid "Reviewer rejects claim"
 msgstr ""
 
-#: interlegis/portalmodelo/ombudsman/profiles/default/workflows/claim_workflow/definition.xml
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/profiles/default/workflows/claim_workflow/definition.xml
 msgid "Simple workflow to deal with public claims."
-msgstr ""
-
-msgid "Move"
-msgstr ""
-
-msgid "No change"
 msgstr ""
 
