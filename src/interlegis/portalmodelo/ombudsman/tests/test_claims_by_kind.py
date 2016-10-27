@@ -85,8 +85,6 @@ class ClaimKindDataTestCase(unittest.TestCase):
             '"Solicitação","1"\n'
             '"Sugestão","2"'
         )
-        import pdb
-        pdb.set_trace()
         self.assertEqual(expected, csv_claims_by_kind())
 
     def test_get_claim_kind(self):
