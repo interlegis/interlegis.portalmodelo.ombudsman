@@ -12,24 +12,22 @@ from zope.schema import getFieldsInOrder
 
 from collections import Counter
 from io import BytesIO
-import csv
-import json
+from claims_util import import_from_dicts
+import rows
 
 
 def json_claims_by_date():
-    count_by_date = count_claims_by_date()
-    items = [{'label': k, 'count': v} for k,v in count_by_date.items()]
-    result = dict(items=items)
-    return json.dumps(result)
+    counter = count_claims_by_date()
+    result = import_from_dicts(counter)
+    result.order_by('label')
+    return rows.export_to_json(result)
 
 
 def csv_claims_by_date():
-    count_by_date = count_claims_by_date()
-    result = []
-    result.append('"{}","{}"'.format('date','count'))
-    for k,v in sorted(count_by_date.items()):
-        result.append('"{}","{}"'.format(k,v))
-    return '\n'.join(result)
+    counter = count_claims_by_date()
+    result = import_from_dicts(counter)
+    result.order_by('label')
+    return rows.export_to_csv(result)
 
 
 def count_claims_by_date():
