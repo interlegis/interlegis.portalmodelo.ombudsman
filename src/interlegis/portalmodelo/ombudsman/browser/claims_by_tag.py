@@ -39,7 +39,7 @@ def count_claims_by_tag():
     ]
 
     return Counter(
-        [get_claim_tag(claim) for claim in claims]
+        [get_claim_tag(claim.getObject()) for claim in claims]
     )
 
 
@@ -49,9 +49,8 @@ def have_behavior(obj, behavior='ICategorization'):
 
 
 def get_claim_tag(claim):
-    obj = claim.getObject()
-    if have_behavior(obj):
-        subject = ','.join(obj.subject) if obj.subject else 'não categorizado'
+    if have_behavior(claim):
+        subject = ','.join(claim.subject) if claim.subject else 'não categorizado'
         return subject
     return ''
 
