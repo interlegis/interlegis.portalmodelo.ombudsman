@@ -9,6 +9,7 @@ from plone.dexterity.interfaces import IDexterityFTI
 from plone.uuid.interfaces import IAttributeUUID
 from zope.component import createObject
 from zope.component import queryUtility
+from zope.component import queryMultiAdapter
 
 import unittest
 
@@ -19,6 +20,7 @@ class ContentTypeTestCase(unittest.TestCase):
 
     def setUp(self):
         self.portal = self.layer['portal']
+        self.request = self.layer['request']
         office = create_ombudsoffice(self, 'office')
         self.claim = api.content.create(office, 'Claim', 'claim')
 

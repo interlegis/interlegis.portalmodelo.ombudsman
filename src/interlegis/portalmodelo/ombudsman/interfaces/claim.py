@@ -88,12 +88,3 @@ class IClaim(model.Schema):
         required=False,
         vocabulary=u'brasil.estados',
     )
-
-class ICaptcha(Interface):
-    """Captcha/ReCaptcha text field to extend the existing comment form.
-    """
-    captcha = schema.TextLine(
-        title=u"ReCaptcha",
-        description=u"",
-        required=False
-    )
