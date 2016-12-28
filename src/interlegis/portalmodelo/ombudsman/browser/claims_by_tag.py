@@ -12,23 +12,22 @@ from zope.schema import getFieldsInOrder
 
 from collections import Counter
 from io import BytesIO
-import csv
-import json
+from claims_util import import_from_dicts
+import rows
+
 
 def json_claims_by_tag():
-    count_by_tag = count_claims_by_tag()
-    items = [{'label': k, 'count': v} for k,v in count_by_tag.items()]
-    result = dict(items=items)
-    return json.dumps(result)
+    counter = count_claims_by_tag()
+    result = import_from_dicts(counter)
+    result.order_by('count')
+    return rows.export_to_json(result)
 
 
 def csv_claims_by_tag():
-    count_by_tag = count_claims_by_tag()
-    result = []
-    result.append('"{}","{}"'.format('tag','count'))
-    for k,v in sorted(count_by_tag.items(), key=lambda x: x[1], reverse=True):
-        result.append('"{}","{}"'.format(k,v))
-    return '\n'.join(result)
+    counter = count_claims_by_tag()
+    result = import_from_dicts(counter)
+    result.order_by('count')
+    return rows.export_to_csv(result)
 
 
 def count_claims_by_tag():
@@ -40,7 +39,7 @@ def count_claims_by_tag():
     ]
 
     return Counter(
-        [get_claim_tag(claim) for claim in claims]
+        [get_claim_tag(claim.getObject()) for claim in claims]
     )
 
 
@@ -50,9 +49,8 @@ def have_behavior(obj, behavior='ICategorization'):
 
 
 def get_claim_tag(claim):
-    obj = claim.getObject()
-    if have_behavior(obj):
-        subject = ','.join(obj.subject) if obj.subject else 'não categorizado'
+    if have_behavior(claim):
+        subject = ','.join(claim.subject) if claim.subject else 'não categorizado'
         return subject
     return ''
 

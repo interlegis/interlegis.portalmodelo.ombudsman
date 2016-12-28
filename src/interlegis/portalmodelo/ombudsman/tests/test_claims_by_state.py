@@ -64,26 +64,24 @@ class ClaimJsonDataTestCase(unittest.TestCase):
     def test_json_claims_by_state(self):
         self.addTypeEqualityFunc(dict, compare_json_dict)
         expected = json.loads(
-            '{'
-            '    "items": ['
-            '        {"label" : "Aceita", "count" : 1},'
-            '        {"label" : "Pendente", "count" : 1},'
-            '        {"label" : "Rejeitada", "count" : 1},'
-            '        {"label" : "Resolvida", "count" : 1},'
-            '        {"label" : "Tramitando", "count" : 1}'
-            '    ]'
-            '}'
+            '['
+            '    {"label" : "Aceita", "count" : 1},'
+            '    {"label" : "Pendente", "count" : 1},'
+            '    {"label" : "Rejeitada", "count" : 1},'
+            '    {"label" : "Resolvida", "count" : 1},'
+            '    {"label" : "Tramitando", "count" : 1}'
+            ']'
         )
         self.assertEqual(expected, json.loads(json_claims_by_state()))
 
     def test_csv_claims_by_state(self):
         expected = (
-            '"state","count"\n'
-            '"Aceita","1"\n'
-            '"Pendente","1"\n'
-            '"Rejeitada","1"\n'
-            '"Resolvida","1"\n'
-            '"Tramitando","1"'
+            'label,count\r\n'
+            'Aceita,1\r\n'
+            'Pendente,1\r\n'
+            'Rejeitada,1\r\n'
+            'Resolvida,1\r\n'
+            'Tramitando,1\r\n'
         )
         self.assertEqual(expected, csv_claims_by_state())
 

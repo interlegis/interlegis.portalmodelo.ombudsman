@@ -60,33 +60,29 @@ class ClaimKindDataTestCase(unittest.TestCase):
     def test_json_claims_by_kind(self):
         self.addTypeEqualityFunc(dict, compare_json_dict)
         expected = json.loads(
-            '{'
-            '    "items": ['
-            '        {"label" : "Dúvida", "count" : 1},'
-            '        {"label" : "Denúncia", "count" : 1},'
-            '        {"label" : "Elogio", "count" : 2},'
-            '        {"label" : "Pedido de acesso à informação", "count" : 1},'
-            '        {"label" : "Reclamação", "count" : 1},'
-            '        {"label" : "Solicitação", "count" : 1},'
-            '        {"label" : "Sugestão", "count" : 2}'
-            '    ]'
-            '}'
+            '['
+            '    {"label" : "Denúncia", "count" : 1},'
+            '    {"label" : "Dúvida", "count" : 1},'
+            '    {"label" : "Elogio", "count" : 2},'
+            '    {"label" : "Pedido de acesso à informação", "count" : 1},'
+            '    {"label" : "Reclamação", "count" : 1},'
+            '    {"label" : "Solicitação", "count" : 1},'
+            '    {"label" : "Sugestão", "count" : 2}'
+            ']'
         )
         self.assertEqual(expected, json.loads(json_claims_by_kind()))
 
     def test_csv_claims_by_kind(self):
         expected = (
-            '"kind","count"\n'
-            '"Denúncia","1"\n'
-            '"Dúvida","1"\n'
-            '"Elogio","2"\n'
-            '"Pedido de acesso à informação","1"\n'
-            '"Reclamação","1"\n'
-            '"Solicitação","1"\n'
-            '"Sugestão","2"'
+            'label,count\r\n'
+            'Denúncia,1\r\n'
+            'Dúvida,1\r\n'
+            'Elogio,2\r\n'
+            'Pedido de acesso à informação,1\r\n'
+            'Reclamação,1\r\n'
+            'Solicitação,1\r\n'
+            'Sugestão,2\r\n'
         )
-        import pdb
-        pdb.set_trace()
         self.assertEqual(expected, csv_claims_by_kind())
 
     def test_get_claim_kind(self):

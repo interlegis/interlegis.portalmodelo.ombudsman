@@ -60,34 +60,32 @@ class ClaimDateDataTestCase(unittest.TestCase):
     def test_json_claims_by_date(self):
         self.addTypeEqualityFunc(dict, compare_json_dict)
         expected = json.loads(
-            '{'
-            '    "items": ['
-            '        {"label" : "2015/01/09", "count" : 1},'
-            '        {"label" : "2015/03/07", "count" : 1},'
-            '        {"label" : "2015/06/04", "count" : 1},'
-            '        {"label" : "2015/09/01", "count" : 1},'
-            '        {"label" : "2016/02/08", "count" : 1},'
-            '        {"label" : "2016/04/06", "count" : 1},'
-            '        {"label" : "2016/05/05", "count" : 1},'
-            '        {"label" : "2016/07/03", "count" : 1},'
-            '        {"label" : "2016/08/02", "count" : 1}'
-            '    ]'
-            '}'
+            '['
+            '    {"label" : "2015/01/09", "count" : 1},'
+            '    {"label" : "2015/03/07", "count" : 1},'
+            '    {"label" : "2015/06/04", "count" : 1},'
+            '    {"label" : "2015/09/01", "count" : 1},'
+            '    {"label" : "2016/02/08", "count" : 1},'
+            '    {"label" : "2016/04/06", "count" : 1},'
+            '    {"label" : "2016/05/05", "count" : 1},'
+            '    {"label" : "2016/07/03", "count" : 1},'
+            '    {"label" : "2016/08/02", "count" : 1}'
+            ']'
         )
         self.assertEqual(expected, json.loads(json_claims_by_date()))
 
     def test_csv_claims_by_date(self):
         expected = (
-            '"date","count"\n'
-            '"2015/01/09","1"\n'
-            '"2015/03/07","1"\n'
-            '"2015/06/04","1"\n'
-            '"2015/09/01","1"\n'
-            '"2016/02/08","1"\n'
-            '"2016/04/06","1"\n'
-            '"2016/05/05","1"\n'
-            '"2016/07/03","1"\n'
-            '"2016/08/02","1"'
+            'label,count\r\n'
+            '2015/01/09,1\r\n'
+            '2015/03/07,1\r\n'
+            '2015/06/04,1\r\n'
+            '2015/09/01,1\r\n'
+            '2016/02/08,1\r\n'
+            '2016/04/06,1\r\n'
+            '2016/05/05,1\r\n'
+            '2016/07/03,1\r\n'
+            '2016/08/02,1\r\n'
         )
         self.assertEqual(expected, csv_claims_by_date())
 
