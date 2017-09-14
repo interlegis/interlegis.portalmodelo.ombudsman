@@ -12,7 +12,8 @@
                         b_start python:0; b_start request/b_start | b_start;
                         results view/claims;
                         batch python:Batch(results, b_size, int(b_start), orphan=1);
-                        toLocalizedTime nocall:context/@@plone/toLocalizedTime;">
+                        toLocalizedTime nocall:context/@@plone/toLocalizedTime;
+                        canEdit python:checkPermission('Modify portal content', here);">
   <tal:core metal:define-macro="content-core">
     <form tal:attributes="action string:${context/absolute_url}/++add++Claim"
           tal:condition="view/is_anonymous">
@@ -38,6 +39,7 @@
           <thead>
             <tr>
               <th class="column" i18n:translate="">Topic</th>
+              <th tal:condition="canEdit" class="column" i18n:translate="">Area</th>
               <th class="column" i18n:translate="">Review State</th>
               <th class="column" i18n:translate="">Sent Date</th>
               <th class="column" i18n:translate="">Last Modification</th>
@@ -49,6 +51,8 @@
                 <a href="" title="" tal:content="claim/title"
                    tal:attributes="href claim/url; title claim/description" />
               </td>
+              <td tal:condition="canEdit"
+                  tal:content="claim/area" />
               <td tal:attributes="class claim/klass"
                   tal:content="claim/review_state"
                   i18n:translate="" />

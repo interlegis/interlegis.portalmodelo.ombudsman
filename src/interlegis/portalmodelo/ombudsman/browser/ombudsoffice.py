@@ -46,6 +46,7 @@ class View(grok.View):
                 review_state=PMF(review_state),
                 created=i.created(),
                 modified=i.modified(),
+                area=i.area
             ))
         return sorted(claims, key=lambda m: m['modified'], reverse=True)
 
