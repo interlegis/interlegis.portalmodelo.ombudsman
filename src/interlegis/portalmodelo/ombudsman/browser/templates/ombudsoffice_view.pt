@@ -15,11 +15,12 @@
                         toLocalizedTime nocall:context/@@plone/toLocalizedTime;
                         canEdit python:checkPermission('Modify portal content', here);">
   <tal:core metal:define-macro="content-core">
-    <form tal:attributes="action string:${context/absolute_url}/++add++Claim"
-          tal:condition="view/is_anonymous">
-      <input type="submit" i18n:attributes="value" value="Add new claim" id="add-new-claim" />
-    </form>
-
+    <div id="claim-button">
+        <form tal:attributes="action string:${context/absolute_url}/++add++Claim"
+              tal:condition="view/is_anonymous">
+          <input type="submit" i18n:attributes="value" value="Add new claim" id="add-new-claim" />
+        </form>
+    </div>
     <h2 i18n:translate="">Check claim</h2>
     <form tal:attributes="action string:${context/absolute_url}/@@search-claim">
       <input class="searchField" type="text" placeholder="Claim number" title="Claim number" name="claim"
