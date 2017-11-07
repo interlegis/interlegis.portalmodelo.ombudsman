@@ -88,3 +88,11 @@ class IClaim(model.Schema):
         required=False,
         vocabulary=u'brasil.estados',
     )
+
+    form.order_after(captcha='state')
+    form.mode(captcha='hidden')
+    captcha = schema.TextLine(
+        title = u"ReCaptcha",
+        required = False
+    )
+

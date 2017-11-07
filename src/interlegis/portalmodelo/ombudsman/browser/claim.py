@@ -2,15 +2,18 @@
 from Acquisition import aq_inner
 from five import grok
 from interlegis.portalmodelo.ombudsman.adapters import IResponseContainer
+from interlegis.portalmodelo.ombudsman.browser import validator
 from interlegis.portalmodelo.ombudsman.interfaces import IBrowserLayer
 from interlegis.portalmodelo.ombudsman.interfaces import IClaim
-from plone.registry.interfaces import IRegistry
 from plone import api
 from plone.dexterity.utils import addContentToContainer
 from plone.directives import dexterity
+from plone.directives import form
 from plone.memoize import view
+from plone.registry.interfaces import IRegistry
 from Products.CMFPlone import PloneMessageFactory as PMF
 from z3c.form import field
+from z3c.form import interfaces
 from zope.component import queryUtility
 
 grok.templatedir('templates')
@@ -118,7 +121,26 @@ class AddView(dexterity.AddForm):
     grok.name('Claim')
     grok.require('interlegis.portalmodelo.ombudsman.AddClaim')
 
+    def show_recaptcha_widget(self):
+        anon = api.user.is_anonymous()
+        q_i = api.portal.get_tool(name='portal_quickinstaller')
+        recaptcha_installed = q_i.isProductInstalled(
+            'plone.formwidget.recaptcha')
+        recaptcha_configured = False
+
+        if recaptcha_installed:
+            from plone.formwidget.recaptcha.interfaces import IReCaptchaSettings
+            registry = queryUtility(IRegistry)
+            settings = registry.forInterface(IReCaptchaSettings)
+            recaptcha_configured = (len(settings.public_key) > 0)
+        return (anon and recaptcha_installed and recaptcha_configured)
+
     def update(self):
+        if self.show_recaptcha_widget():
+            self.fields = field.Fields(IClaim).select('captcha')
+            from plone.formwidget.recaptcha import ReCaptchaFieldWidget
+            self.fields['captcha'].widgetFactory = ReCaptchaFieldWidget
+            self.fields.widgetFactory = form.mode(captcha='display')
         # XXX: currently, any user can add a claim
         #      do we need to check if the user is anonymous?
         super(AddView, self).update()
@@ -133,7 +155,25 @@ class AddView(dexterity.AddForm):
         if errors:
             return
 
-        obj = addContentToContainer(
-            container, object, checkConstraints=False)
-        self.immediate_view = '{0}/{1}'.format(
-            container.absolute_url(), obj.id)
+        # Validate Captcha
+        anon = api.user.is_anonymous()
+        good_to_go = False
+        if anon:
+            if 'captcha' not in data:
+                data['captcha'] = u""
+            captcha = validator.CaptchaValidator(self.context,
+                                                 self.request,
+                                                 None,
+                                                 IClaim['captcha'],
+                                                 None)
+            if captcha.validate(data['captcha']):
+                good_to_go = True
+        else:
+            good_to_go = True
+
+
+        if good_to_go:
+            obj = addContentToContainer(
+                container, object, checkConstraints=False)
+            self.immediate_view = '{0}/{1}'.format(
+                container.absolute_url(), obj.id)
