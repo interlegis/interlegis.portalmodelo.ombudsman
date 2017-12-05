@@ -2,7 +2,7 @@ Changelog
 =========
 
 1.2 (2017-12-05)
----------------
+----------------
 
 - Add recaptcha support
   [rafahela]
