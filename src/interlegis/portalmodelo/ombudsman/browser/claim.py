@@ -133,7 +133,7 @@ class AddView(dexterity.AddForm):
             registry = queryUtility(IRegistry)
             settings = registry.forInterface(IReCaptchaSettings)
             recaptcha_configured = (len(settings.public_key) > 0)
-        return (anon and recaptcha_installed and recaptcha_configured)
+        return (recaptcha_installed and recaptcha_configured)
 
     def update(self):
         if self.show_recaptcha_widget():
@@ -158,16 +158,15 @@ class AddView(dexterity.AddForm):
         # Validate Captcha
         anon = api.user.is_anonymous()
         good_to_go = False
-        if anon:
-            if 'captcha' not in data:
-                data['captcha'] = u""
-            captcha = validator.CaptchaValidator(self.context,
-                                                 self.request,
-                                                 None,
-                                                 IClaim['captcha'],
-                                                 None)
-            if captcha.validate(data['captcha']):
-                good_to_go = True
+        if 'captcha' not in data:
+            data['captcha'] = u""
+        captcha = validator.CaptchaValidator(self.context,
+                                             self.request,
+                                             None,
+                                             IClaim['captcha'],
+                                             None)
+        if captcha.validate(data['captcha']):
+            good_to_go = True
         else:
             good_to_go = True
 
