@@ -5,10 +5,7 @@ from interlegis.portalmodelo.ombudsman.interfaces import IClaim
 from interlegis.portalmodelo.ombudsman.interfaces import IOmbudsOffice
 from interlegis.portalmodelo.ombudsman.adapters import IResponseContainer
 from plone import api
-# from plone.autoform.interfaces import READ_PERMISSIONS_KEY
 from plone.dexterity.interfaces import IDexterityFTI
-from plone.behavior.interfaces import IBehaviorAssignable
-from plone import behavior
 from Products.CMFPlone.interfaces import IPloneSiteRoot
 from zope.component import getUtility
 from zope.schema import getFieldsInOrder

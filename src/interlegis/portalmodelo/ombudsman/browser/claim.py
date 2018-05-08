@@ -13,7 +13,6 @@ from plone.memoize import view
 from plone.registry.interfaces import IRegistry
 from Products.CMFPlone import PloneMessageFactory as PMF
 from z3c.form import field
-from z3c.form import interfaces
 from zope.component import queryUtility
 
 grok.templatedir('templates')
@@ -167,12 +166,14 @@ class AddView(dexterity.AddForm):
                                              None)
         if captcha.validate(data['captcha']):
             good_to_go = True
+
         else:
             good_to_go = True
-
 
         if good_to_go:
             obj = addContentToContainer(
                 container, object, checkConstraints=False)
             self.immediate_view = '{0}/{1}'.format(
                 container.absolute_url(), obj.id)
+
+

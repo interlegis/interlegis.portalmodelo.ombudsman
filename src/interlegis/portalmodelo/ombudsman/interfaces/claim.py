@@ -3,7 +3,6 @@ from interlegis.portalmodelo.ombudsman import _
 from plone.directives import form
 from plone.supermodel import model
 from zope import schema
-from zope.interface import Interface
 
 
 class IClaim(model.Schema):
@@ -92,7 +91,7 @@ class IClaim(model.Schema):
     form.order_after(captcha='state')
     form.mode(captcha='hidden')
     captcha = schema.TextLine(
-        title = u"ReCaptcha",
-        required = False
+        title=u"ReCaptcha",
+        required=False
     )
 
