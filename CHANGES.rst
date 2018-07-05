@@ -1,10 +1,11 @@
 Changelog
 =========
 
-1.3 (unreleased)
+1.3 (2018-07-06)
 ----------------
 
-- Nothing changed yet.
+- Add statistic chart to ombudsman office and structured JSON to populate the chart.
+  [IolaneAndrade]
 
 
 1.2 (2017-12-05)
