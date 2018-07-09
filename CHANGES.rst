@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.3 (2018-07-06)
+1.3 (2018-07-09)
 ----------------
 
 - Add statistic chart to ombudsman office and structured JSON to populate the chart.
