@@ -1,10 +1,11 @@
 Changelog
 =========
 
-1.4 (unreleased)
+1.4 (2018-07-17)
 ----------------
 
-- Nothing changed yet.
+- Add CPF and RG fields to Claim.
+  [rafahela]
 
 
 1.3 (2018-07-09)
