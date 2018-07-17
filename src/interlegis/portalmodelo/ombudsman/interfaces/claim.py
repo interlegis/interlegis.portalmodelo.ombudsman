@@ -52,6 +52,20 @@ class IClaim(model.Schema):
     )
 
     form.read_permission(email='interlegis.portalmodelo.ombudsman.ViewClaimPersonalInfo')
+    cpf = schema.TextLine(
+        title=_(u'CPF'),
+        description=_(u'help_CPF', default=u''),
+        required=True,
+    )
+
+    form.read_permission(email='interlegis.portalmodelo.ombudsman.ViewClaimPersonalInfo')
+    rg = schema.TextLine(
+        title=_(u'RG'),
+        description=_(u'help_rg', default=u''),
+        required=True,
+    )
+
+    form.read_permission(email='interlegis.portalmodelo.ombudsman.ViewClaimPersonalInfo')
     email = schema.ASCIILine(
         title=_(u'Email'),
         description=_(
