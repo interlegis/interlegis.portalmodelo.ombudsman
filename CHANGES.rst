@@ -1,6 +1,12 @@
 Changelog
 =========
 
+1.5.dev0 (unreleased)
+---------------------
+
+- Nothing changed yet.
+
+
 1.4 (2018-07-17)
 ----------------
 
