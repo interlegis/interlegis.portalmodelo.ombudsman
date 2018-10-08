@@ -155,6 +155,7 @@ A informação mostrada inclui ouvidorias e solicitações num formato simples::
 
 
 Contribuindo
-========================
+------------
 
 Para contribuir com o projeto, por favor, leia o `CONTRIBUTING <https://github.com/interlegis/interlegis.portalmodelo.ombudsman/blob/master/.github/CONTRIBUTING.md>`_.
+ 
