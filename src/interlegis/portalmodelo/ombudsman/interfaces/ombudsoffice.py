@@ -78,7 +78,7 @@ class IOmbudsOffice(model.Schema):
     email_template = schema.Text(
         title=_(u'Template for fist email after claim created.'),
         description=_(u'Use vars {title}, {protocol}, {url}, {name}, {email}, \
-{address}, {city}, {state}, {postalcode}, {status} to customize your template.'),
+{address}, {city}, {state}, {postal_code}, {status} to customize your template.'),
         required=False,
     )
 
@@ -86,7 +86,7 @@ class IOmbudsOffice(model.Schema):
     email_template_states = schema.Text(
         title=_(u'Template for further email after alter state of claim.'),
         description=_(u'Use vars {title}, {protocol}, {url}, {name}, {email}, \
-{address}, {city}, {state}, {postalcode}, {status} to customize your template.'),
+{address}, {city}, {state}, {postal_code}, {status} to customize your template.'),
         required=False,
     )
 

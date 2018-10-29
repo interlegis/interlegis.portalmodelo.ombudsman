@@ -235,7 +235,7 @@ msgid "Topic"
 msgstr ""
 
 #: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:80
-msgid "Use vars {title}, {protocol}, {url}, {name}, {email}, {address}, {city}, {state}, {postalcode}, {status} to customize your template."
+msgid "Use vars {title}, {protocol}, {url}, {name}, {email}, {address}, {city}, {state}, {postal_code}, {status} to customize your template."
 msgstr ""
 
 #: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/browser/validator.py:30
