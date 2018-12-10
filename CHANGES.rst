@@ -4,7 +4,9 @@ Changelog
 1.5.dev0 (unreleased)
 ---------------------
 
-- Fixed up responsivity conflicts in chart 
+- Fixed up responsivity conflicts in chart
+- Fixed up  the ombudsman's  editor permissions
+[IolaneAndrade]
 
 
 1.4 (2018-07-17)

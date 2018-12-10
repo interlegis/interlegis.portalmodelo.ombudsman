@@ -22,6 +22,7 @@
       <role name="Site Administrator"/>
       <role name="Owner"/>
       <role name="Contributor"/>
+      <role name="Editor"/>
     </permission>
   </permissions>
 </rolemap>
