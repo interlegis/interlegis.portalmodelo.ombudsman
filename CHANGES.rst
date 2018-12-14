@@ -5,8 +5,8 @@ Changelog
 ---------------------
 
 - Fixed up responsivity conflicts in chart
-- Fixed up  the ombudsman's  editor permissions
-[IolaneAndrade]
+- Fixed up  the ombudsman's permissions to add responses and Added the new role Ombudsman
+  [IolaneAndrade]
 
 
 1.4 (2018-07-17)

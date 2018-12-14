@@ -285,3 +285,7 @@ msgstr ""
 msgid "help_state"
 msgstr ""
 
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/profiles/default/rolemap.xml
+msgid "Ombudsman"
+msgstr "Ouvidor"
+
