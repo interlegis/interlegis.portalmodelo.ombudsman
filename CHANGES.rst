@@ -1,8 +1,8 @@
 Changelog
 =========
 
-1.5.dev0 (2018-12-14)
----------------------
+1.5 (2018-12-14)
+----------------
 
 - Fix responsivity conflicts in chart
   [IolaneAndrade]
