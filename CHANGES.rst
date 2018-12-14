@@ -1,11 +1,13 @@
 Changelog
 =========
 
-1.5.dev0 (unreleased)
+1.5.dev0 (2018-12-14)
 ---------------------
 
-- Fixed up responsivity conflicts in chart
-- Fixed up  the ombudsman's permissions to add responses and Added the new role Ombudsman
+- Fix responsivity conflicts in chart
+  [IolaneAndrade]
+
+- Fix ombudsman's permissions to add responses and add the new role Ombudsman
   [IolaneAndrade]
 
 
