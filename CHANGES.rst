@@ -10,6 +10,9 @@ Changelog
 - Fix ombudsman's permissions to add responses and add the new role Ombudsman
   [IolaneAndrade]
 
+- Add upgrade step. Add role Ombudsman.
+  [IolaneAndrade]
+
 
 1.4 (2018-07-17)
 ----------------
