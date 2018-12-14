@@ -1,0 +1,30 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:gs="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    i18n_domain="interlegis.portalmodelo.ombudsman">
+
+    <!-- Profile -->
+    <gs:registerProfile
+        name="default"
+        title="interlegis.portalmodelo.ombudsman: Versao 1030"
+        directory="profile"
+        description="Atualiza o pacote interlegis.portalmodelo.ombudsman para versao 1030"
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        i18n:attributes="title; description"
+        />
+
+    <!-- Upgrade -->
+    <gs:upgradeSteps
+        source="1020"
+        destination="1030"
+        profile="interlegis.portalmodelo.ombudsman:default">
+
+        <gs:upgradeStep
+            title="Add new role permission"
+            description="The new role create a ombudsman specific permissions to could respond claims"
+            handler=".handler.apply_profile"
+        />
+    </gs:upgradeSteps>
+</configure>

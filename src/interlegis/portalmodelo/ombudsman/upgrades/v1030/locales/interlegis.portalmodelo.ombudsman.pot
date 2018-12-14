@@ -1,0 +1,295 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2015-11-27 19:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/interfaces/claim.py:34
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:44
+msgid ""
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/profiles/default/types/Claim.xml
+msgid "A claim to the Ombudsman."
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:124
+msgid "Action"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:132
+msgid "Add"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:19
+msgid "Add new claim"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:121
+msgid "Add response"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/interfaces/claim.py:67
+msgid "Address"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/interfaces/claim.py:23
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:24
+msgid "Area"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:64
+msgid "Areas"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:22
+msgid "Check claim"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/interfaces/claim.py:80
+msgid "City"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/profiles/default/types/Claim.xml
+msgid "Claim"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:15
+msgid "Claim Type"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:56
+msgid "Claim Types"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/browser/ombudsoffice.py:97
+msgid "Claim id not found."
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:24
+msgid "Claim number"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/profiles/default/types/OmbudsOffice.xml
+msgid "Container to store claims to the Ombudsman."
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:37
+msgid "Created"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:105
+msgid "Date"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:143
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:49
+msgid "Description"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/interfaces/claim.py:40
+msgid "Details"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:95
+msgid "Display claims for anonymous?"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/interfaces/claim.py:57
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:34
+msgid "Email"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:65
+msgid "Enter areas, name and email of responsible persons."
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:57
+msgid "Enter claim types."
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:136
+msgid "Files"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:141
+msgid "Id"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/browser/response.py:40
+msgid "Item created."
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:43
+msgid "Last Modification"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:71
+msgid "Managers"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/interfaces/claim.py:50
+msgid "Name"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/browser/ombudsoffice.py:88
+msgid "No claim id specified."
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:168
+msgid "No files yet for this claim."
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:116
+msgid "No responses yet for this claim."
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:43
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/profiles/default/types/OmbudsOffice.xml
+msgid "Ombuds Office"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:36
+msgid "Open claims"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:68
+msgid "Personal information"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/interfaces/claim.py:74
+msgid "Postal code"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:49
+msgid "Protocol"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:130
+msgid "Response text"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:94
+msgid "Responses"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:100
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:29
+msgid "Responsible"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:53
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:41
+msgid "Review State"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:26
+msgid "Search"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:42
+msgid "Sent Date"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/interfaces/claim.py:86
+msgid "State"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:109
+msgid "Status"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:79
+msgid "Template for fist email after claim created."
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:87
+msgid "Template for further email after alter state of claim."
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/browser/response.py:25
+msgid "There were some errors. Required input is missing."
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/interfaces/claim.py:13
+msgid "Tipos de solicitação"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:142
+msgid "Title"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:40
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/interfaces/claim.py:33
+msgid "Topic"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/interfaces/ombudsoffice.py:80
+msgid "Use vars {title}, {protocol}, {url}, {name}, {email}, {address}, {city}, {state}, {postal_code}, {status} to customize your template."
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/browser/validator.py:30
+msgid "You entered an invalid captcha."
+msgstr ""
+
+#. Default: "There are currently no claims in this ombudsman office."
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:29
+msgid "description_no_claims_in_folder"
+msgstr ""
+
+#. Default: "Informe seu endereço."
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/interfaces/claim.py:68
+msgid "help_address"
+msgstr ""
+
+#. Default: "Selecione a área para a qual a solicitação será enviada."
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/interfaces/claim.py:24
+msgid "help_area"
+msgstr ""
+
+#. Default: "Informe sua cidade."
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/interfaces/claim.py:81
+msgid "help_city"
+msgstr ""
+
+#. Default: "Por favor, informe detalhes adicionais."
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/interfaces/claim.py:41
+msgid "help_description"
+msgstr ""
+
+#. Default: "Informe o email para onde serão enviadas informações sobre a solicitação."
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/interfaces/claim.py:58
+msgid "help_email"
+msgstr ""
+
+#. Default: "Selecione o tipo de solicitação."
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/interfaces/claim.py:14
+msgid "help_kind"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/interfaces/claim.py:51
+msgid "help_name"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/interfaces/claim.py:75
+msgid "help_postal_code"
+msgstr ""
+
+#. Default: "Informe seu estado."
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/interfaces/claim.py:87
+msgid "help_state"
+msgstr ""
+
+#: interlegis.portalmodelo.ombudsman/src/interlegis/portalmodelo/ombudsman/profiles/default/rolemap.xml
+msgid "Ombudsman"
+msgstr "Ouvidor"

@@ -6,5 +6,6 @@
     <!-- Passos de atualizacao -->
     <include package=".v1010" />
     <include package=".v1020" />
+    <include package=".v1030" />
 
 </configure>
