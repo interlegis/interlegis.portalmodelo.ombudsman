@@ -129,11 +129,11 @@
         </select>
         <textarea placeholder="Response text" title="Response text" rows="20" name="text"
             i18n:attributes="placeholder; title"></textarea>
-        <button type="submit" i18n:translate="" id="btn-claim-submit" class="btn btn-primary">Add</button>
+        <button type="submit" i18n:translate="" id="btn-claim-submit" class="btn btn-primary">Send Answer</button>
       </form>
     </div>
 
-    <h2 i18n:translate="">Files</h2>
+    <h2 i18n:translate="">Files List</h2>
     <div tal:condition="view/has_files">
       <table class="listing">
         <thead>

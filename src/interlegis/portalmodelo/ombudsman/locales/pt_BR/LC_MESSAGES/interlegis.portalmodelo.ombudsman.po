@@ -26,6 +26,10 @@ msgstr "Procedimento"
 msgid "Add"
 msgstr "Adicionar"
 
+#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:132
+msgid "Send Answer"
+msgstr "Enviar Resposta"
+
 #: interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:19
 msgid "Add new claim"
 msgstr "Adicionar nova solicitação"
@@ -116,6 +120,10 @@ msgstr "Tipos de solicitação"
 #: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:136
 msgid "Files"
 msgstr "Arquivos anexados"
+
+#: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:136
+msgid "Files List"
+msgstr "Lista de arquivos anexados"
 
 #: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:141
 msgid "Id"
