@@ -4,7 +4,8 @@ Changelog
 1.6 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- New term for answers to requests in the ombudsman's office
+  [IolaneAndrade]
 
 
 1.5 (2018-12-14)
