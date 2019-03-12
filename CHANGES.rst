@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.6 (unreleased)
+1.6 (2019-03-12)
 ----------------
 
 - New term for answers to requests in the ombudsman's office
