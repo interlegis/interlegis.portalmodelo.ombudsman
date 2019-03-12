@@ -27,7 +27,7 @@ msgid "Add"
 msgstr "Adicionar"
 
 #: interlegis/portalmodelo/ombudsman/browser/templates/claim_view.pt:132
-msgid "Send Answer"
+msgid "Send Response"
 msgstr "Enviar Resposta"
 
 #: interlegis/portalmodelo/ombudsman/browser/templates/ombudsoffice_view.pt:19
