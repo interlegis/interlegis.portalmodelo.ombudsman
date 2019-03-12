@@ -1,6 +1,12 @@
 Changelog
 =========
 
+1.7.dev0 (unreleased)
+---------------------
+
+- Nothing changed yet.
+
+
 1.6 (2019-03-12)
 ----------------
 
