@@ -62,7 +62,7 @@ class IClaim(model.Schema):
     rg = schema.TextLine(
         title=_(u'RG'),
         description=_(u'help_rg', default=u''),
-        required=True,
+        required=False,
     )
 
     form.read_permission(email='interlegis.portalmodelo.ombudsman.ViewClaimPersonalInfo')
