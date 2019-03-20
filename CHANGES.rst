@@ -4,7 +4,8 @@ Changelog
 1.7.dev0 (unreleased)
 ---------------------
 
-- Nothing changed yet.
+- RG is not required anymore.
+  [rafahela]
 
 
 1.6 (2019-03-12)
