@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.7.dev0 (unreleased)
+1.7.dev0 (2019-04-08)
 ---------------------
 
 - RG is not required anymore.
