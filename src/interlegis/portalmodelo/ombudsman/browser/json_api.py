@@ -35,9 +35,7 @@ class JSONView(grok.View):
         j = {}
         j['ombudsoffices'] = self.get_ombudsoffices()
         j['claims'] = self.get_claims()
-
-        status = [j]
-        return json.dumps(status, sort_keys=True, indent=4)
+        return json.dumps(j, sort_keys=True, indent=4)
 
     def serialize(self, results):
         """Serialize fields of a list of Dexterity-based content type objects.
@@ -50,9 +48,7 @@ class JSONView(grok.View):
 
         s = []
         for i in results:
-            # for a in portal:
             obj = i.getObject()
-            url = i.getPath()
             # initialize a dictionary with the object uri
             fields = dict(uri=obj.absolute_url())  # XXX: should we use UUID?
             # find out object schema to list its fields
@@ -76,7 +72,6 @@ class JSONView(grok.View):
                 fields['review_state'] = review_state
                 # Set a list of responses.
                 fields['responses'] = self.set_claim_response(obj)
-                fields['path'] = url
                 if self.have_behavior('ICategorization', obj):
                     fields['subject'] = obj.subject
 
@@ -129,5 +124,5 @@ class JSONView(grok.View):
                                 creator=type_cast(response.creator),
                                 date=type_cast(response.date),
                                 review_state=type_cast(response.review_state),
-                                text=type_cast(response.text))),
+                                text=type_cast(response.text)))
         return results

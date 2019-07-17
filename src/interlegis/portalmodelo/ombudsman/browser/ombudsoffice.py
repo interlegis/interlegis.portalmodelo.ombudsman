@@ -10,7 +10,6 @@ from plone import api
 from plone.memoize import view
 from Products.CMFPlone import PloneMessageFactory as PMF
 
-
 grok.templatedir('templates')
 
 
@@ -35,8 +34,6 @@ class View(grok.View):
         :rtype: list of dictionaries
         """
         results = self.context.listFolderContents({'portal_type': 'Claim'})
-
-
         claims = []
         for i in results:
                 review_state = api.content.get_state(i)
@@ -53,7 +50,6 @@ class View(grok.View):
                     created=i.created(),
                     modified=i.modified(),
                     area=i.area,
-
                 ))
         return sorted(claims, key=lambda m: m['modified'], reverse=True)
 
