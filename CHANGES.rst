@@ -4,7 +4,8 @@ Changelog
 1.8 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Changed the charts data to belong to one ombudsman office
+  [IolaneAndrade]
 
 
 1.7 (2019-04-08)
