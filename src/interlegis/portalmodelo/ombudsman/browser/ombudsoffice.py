@@ -1,11 +1,15 @@
 # -*- coding: utf-8 -*-
+from collections import Counter
 from five import grok
 from interlegis.portalmodelo.ombudsman import _
+from interlegis.portalmodelo.ombudsman.browser.claims_by_state import get_claim_state
 from interlegis.portalmodelo.ombudsman.interfaces import IBrowserLayer
 from interlegis.portalmodelo.ombudsman.interfaces import IOmbudsOffice
+import json
 from plone import api
 from plone.memoize import view
 from Products.CMFPlone import PloneMessageFactory as PMF
+
 
 grok.templatedir('templates')
 
@@ -31,23 +35,26 @@ class View(grok.View):
         :rtype: list of dictionaries
         """
         results = self.context.listFolderContents({'portal_type': 'Claim'})
+
+
         claims = []
         for i in results:
-            review_state = api.content.get_state(i)
-            klass = 'state-' + review_state
-            state = review_state
-            review_state = self.wftool.getTitleForStateOnType(review_state, 'Claim')
-            claims.append(dict(
-                title=i.title,
-                description=i.description,
-                url=i.absolute_url(),
-                klass=klass,
-                state=state,
-                review_state=PMF(review_state),
-                created=i.created(),
-                modified=i.modified(),
-                area=i.area
-            ))
+                review_state = api.content.get_state(i)
+                klass = 'state-' + review_state
+                state = review_state
+                review_state = self.wftool.getTitleForStateOnType(review_state, 'Claim')
+                claims.append(dict(
+                    title=i.title,
+                    description=i.description,
+                    url=i.absolute_url(),
+                    klass=klass,
+                    state=state,
+                    review_state=PMF(review_state),
+                    created=i.created(),
+                    modified=i.modified(),
+                    area=i.area,
+
+                ))
         return sorted(claims, key=lambda m: m['modified'], reverse=True)
 
     @view.memoize
@@ -98,3 +105,51 @@ class SearchView(grok.View):
                 msg = _(u'Claim id not found.')
                 api.portal.show_message(message=msg, request=self.request, type='error')
         self.request.response.redirect(self.context.absolute_url())
+
+
+class CountStateData(grok.View):
+    """Generates a count state data of claims with information about Ombuds Offices and claims.
+       It's used to populate chart
+    """
+    grok.context(IOmbudsOffice)
+    grok.require('zope2.View')
+    grok.name('ombudsman-state-count')
+
+    def count_claims_by_state(self):
+        claims = self.context.listFolderContents({'portal_type': 'Claim'})
+        claims = dict((i, i) for i in claims)
+        return Counter([get_claim_state(claim) for claim in claims])
+
+    def render(self):
+        count = self.count_claims_by_state()
+        pendente = int(count['Pendente'])
+        aceita = int(count['Aceita'])
+        tramitando = int(count['Tramitando'])
+        rejeitada = int(count['Rejeitada'])
+        resolvida = int(count['Resolvida'])
+
+        j = {}
+        j['count'] = pendente
+        j['label'] = "Pendente"
+
+        k = {}
+        k['count'] = aceita
+        k['label'] = "Aceita"
+
+        l = {}
+        l['count'] = tramitando
+        l['label'] = "Tramitando"
+
+        m = {}
+        m['count'] = rejeitada
+        m['label'] = "Rejeitada"
+
+        n = {}
+        n['count'] = resolvida
+        n['label'] = "Resolvida"
+
+        status = [j, k, l, m, n]
+
+        return json.dumps(status, sort_keys=True, indent=4)
+
+

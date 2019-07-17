@@ -1,13 +1,11 @@
 # -*- coding: utf-8 -*-
 from five import grok
 from interlegis.portalmodelo.ombudsman.interfaces import IClaim
-from interlegis.portalmodelo.ombudsman.interfaces import IOmbudsOffice
 from plone import api
 from Products.CMFPlone.interfaces import IPloneSiteRoot
 from collections import Counter
 from claims_util import import_from_dicts
 import rows
-import json
 
 
 def json_claims_by_state():
@@ -70,39 +68,4 @@ class JSONStateData(grok.View):
     def render(self):
         return json_claims_by_state()
 
-
-class CountStateData(grok.View):
-    """Generates a count state data of claims with information about Ombuds Offices and claims.
-       It's used to populate chart
-    """
-    grok.context(IOmbudsOffice)
-    grok.require('zope2.View')
-    grok.name('ombudsman-state-count')
-
-    def render(self):
-        self.request.response.setHeader('Content-Type', 'application/json')
-        count = count_claims_by_state()
-        pendente = int(count['Pendente'])
-        aceita = int(count['Aceita'])
-        tramitando = int(count['Tramitando'])
-        rejeitada = int(count['Rejeitada'])
-        resolvida = int(count['Resolvida'])
-
-        j = {}
-        j['count'] = pendente
-        j['label'] = "Pendente"
-        k = {}
-        k['count'] = aceita
-        k['label'] = "Aceita"
-        l = {}
-        l['count'] = tramitando
-        l['label'] = "Tramitando"
-        m = {}
-        m['count'] = rejeitada
-        m['label'] = "Rejeitada"
-        n = {}
-        n['count'] = resolvida
-        n['label'] = "Resolvida"
-        solicitacao = [j, k, l, m, n]
-        return json.dumps(solicitacao, sort_keys=True, indent=2)
 

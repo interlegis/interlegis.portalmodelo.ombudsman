@@ -66,7 +66,9 @@
 
       <div style="width:100px; height:100px;"></div>
 
-        <script type="text/javascript">
+        <script type="text/javascript" id="path" tal:attributes="action string:${context/absolute_url}/@@ombudsman-state-count" >
+          var path = $("#path").attr("action");
+          
           window.onload = function() {
             var dataPoints = [];
 
@@ -98,10 +100,9 @@
                 }
                 chart.render();
             }
-            $.getJSON("ouvidoria/@@ombudsman-state-count", addData);
+            $.getJSON(path, addData);
             }
         </script>
-
         <div style="width:400px; height:400px;" width="400" height="400">
 
       <div id="chartContainer" style="height: 370px; width: 100%;"></div>
